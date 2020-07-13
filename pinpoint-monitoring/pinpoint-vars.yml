@@ -1,0 +1,43 @@
+#!/bin/bash
+
+---
+inception_os_user_name: "ubuntu"	
+### On-Demand Bosh Deployment Name Setting ###
+deployment_name: "paasta-pinpoint-monitoring"		# On-Demand Deployment Name
+#### Main Stemcells Setting ###
+stemcell_os: "ubuntu-xenial"				# Deployment Main Stemcell OS
+stemcell_version: "315.36"				# Main Stemcell Version
+stemcell_alias: "default"   				# Main Stemcell Alias
+#### On-Demand Release Deployment Setting ### 
+releases_name:  "paasta-pinpoint-monitoring-release"	# On-Demand Release Name
+public_networks_name: "vip"				# Pinpoint Public Network Name
+PemSSH: "true"						# h_master에서 모니터링 하려는 VM에 SSH접근시 사용하는 Key File 지정 여부(default:false) 
+
+
+# H-Master
+h_master_azs: ["z3"]					# H-Master 가용 존
+h_master_instances: 1					# H-Master 인스턴스 수
+h_master_vm_type: "small-highmem-16GB"			# H-Master VM 종류
+h_master_network: "default"				# H-Master 네트워크
+h_master_persistent_disk_type: "30GB"			# H-Master 영구 Disk 종류
+
+# COLLECTOR
+collector_azs: ["z3"]					# Collector 가용 존
+collector_instances: 1					# Collector 인스턴스 수
+collector_vm_type: "small-highmem-16GB"			# Collector VM 종류
+collector_network: "default"				# Collector 네트워크
+collector_persistent_disk_type: "30GB"			# Collector 영구 Disk 종류
+
+# PINPOINT
+pinpoint_web_azs: ["z3"]				# Pinpoint 가용 존
+pinpoint_web_instances: 1				# Pinpoint 인스턴스 수
+pinpoint_web_vm_type: "small-highmem-16GB"		# Pinpoint VM 종류
+pinpoint_web_network: "default"				# Pinpoint 네트워크
+pinpoint_web_persistent_disk_type: "30GB"		# Pinpoint 영구 Disk 종류
+
+# HAPROXY
+haproxy_webui_azs: ["z7"]				# HAProxy 가용 존
+haproxy_webui_instances: 1				# HAProxy 인스턴스 수
+haproxy_webui_vm_type: "small-highmem-16GB"		# HAProxy VM 종류
+haproxy_webui_network: "default"			# HAProxy 네트워크
+haproxy_webui_persistent_disk_type: "30GB"		# HAProxy 영구 Disk 종류
