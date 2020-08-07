@@ -126,7 +126,7 @@ instance_groups:
         paasta:
           cell_prefix: ((paasta_cell_prefix))
         bosh:
-          url: ((bosh_url))
+          url: ((bosh_ip))
           password: ((bosh_client_admin_secret))
           director_name: ((director_name))
           paasta:
@@ -243,7 +243,7 @@ instance_groups:
         paasta:
           system_domain: ((system_domain))
         bosh:
-          ip: ((bosh_url))
+          ip: ((bosh_ip))
           password: ((bosh_client_admin_secret))
           director_name: ((director_name))
         redis:
