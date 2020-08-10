@@ -405,7 +405,7 @@ instance_groups:
       port: 13306
       seeded_databases:
       - name: cloud_controller
-        password: ((cc_database_password))
+        password: ((paasta_cc_db_password))
         username: cloud_controller
       - name: diego
         password: ((diego_database_password))
@@ -420,7 +420,7 @@ instance_groups:
         password: ((routing_api_database_password))
         username: routing-api
       - name: uaa
-        password: ((uaa_database_password))
+        password: ((paasta_uaa_db_password))
         username: uaa
       - name: locket
         password: ((locket_database_password))
@@ -634,7 +634,7 @@ instance_groups:
             - uaa.service.cf.internal
         url: https://uaa.((system_domain))
         admin:
-          client_secret: "((uaa_admin_client_secret))"
+          client_secret: "((uaa_client_admin_secret))"
         logging_level: INFO
         scim:
           users:
@@ -742,7 +742,7 @@ instance_groups:
         port: 3306
         roles:
         - name: uaa
-          password: "((uaa_database_password))"
+          password: "((paasta_uaa_db_password))"
           tag: admin
         tls_enabled: true
   - name: route_registrar
@@ -948,7 +948,7 @@ instance_groups:
         port: 3306
         roles:
         - name: cloud_controller
-          password: "((cc_database_password))"
+          password: "((paasta_cc_db_password))"
           tag: admin
         ca_cert: "((mysql_server_certificate.ca))"
   - name: binary-buildpack
@@ -1200,7 +1200,7 @@ instance_groups:
         port: 3306
         roles:
         - name: cloud_controller
-          password: ((cc_database_password))
+          password: ((paasta_cc_db_password))
           tag: admin
   - name: statsd_injector
     release: statsd-injector
@@ -1834,13 +1834,13 @@ variables:
   type: password
 - name: cf_mysql_proxy_api_password
   type: password
-- name: cc_database_password
+- name: paasta_cc_db_password
   type: password
 - name: credhub_database_password
   type: password
 - name: diego_database_password
   type: password
-- name: uaa_database_password
+- name: paasta_uaa_db_password
   type: password
 - name: routing_api_database_password
   type: password
@@ -1903,7 +1903,7 @@ variables:
   type: password
 - name: router_route_services_secret
   type: password
-- name: uaa_admin_client_secret
+- name: uaa_client_admin_secret
   type: password
 - name: uaa_clients_cc-routing_secret
   type: password

@@ -5,8 +5,6 @@ network_name: "default"				# VM에 별도로 지정하지 않는 Default Network
 haproxy_public_ip: "61.252.53.246"		# HAProxy IP (Public IP)
 haproxy_public_network_name: "vip"		# PaaS-TA Public Network Name
 cc_db_encryption_key: "db-encryption-key"	# Database Encryption Key (Version Upgrade 시 동일 KEY 필수)
-uaa_database_password: "uaa_admin"		# UAA Database Password
-cc_database_password: "cc_admin"		# CC Database Password
 cert_days: 3650					# PaaS-TA 인증서 유효기간
 uaa_login_logout_redirect_parameter_disable: "false"
 uaa_login_logout_redirect_parameter_whitelist: ["http://portal-web-user.101.55.50.222.xip.io","http://portal-web-user.101.55.50.222.xip.io/callback","http://portal-web-user.101.55.50.222.xip.io/login"]	# 포탈 페이지 이동을 위한 UAA Redirect Whitelist 등록 변수

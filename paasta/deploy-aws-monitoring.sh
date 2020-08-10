@@ -9,4 +9,4 @@ bosh -e micro-bosh -d paasta -n deploy paasta-deployment-monitoring.yml \
 	-o paasta-addon/paasta-monitoring.yml \
 	-o operations/addons/enable-component-syslog.yml \
 	-l aws-vars.yml \
-	-l ../../common/common_vars.yml
+	-l ~/workspace/paasta-test/deployment/common/common_vars.yml
