@@ -8,3 +8,4 @@
   - 5\. [PaaS-TA CaaS Monitoring Container Service 설치(선택)](https://github.com/PaaS-TA/Guide/blob/monitoring-5.0.1/service-guide/monitoring/PAAS-TA_MONITORING_CONTAINER_SERVICE_INSTALL.md)
   - 6\. [PaaS-TA IaaS Monitoring Monasca 설치(선택)](https://github.com/PaaS-TA/Guide/blob/monitoring-5.0.1/service-guide/monitoring/PAAS-TA_MONITORING_MONASCA_INSTALL.md)
   - 7\. [PaaS-TA Monitoring 설치](https://github.com/PaaS-TA/Guide/blob/monitoring-5.0.1/service-guide/monitoring/PAAS-TA_MONITORING_PAAS-TA_MONITORING_INSTALL.md)
+  
