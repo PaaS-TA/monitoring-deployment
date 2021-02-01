@@ -1,9 +1,9 @@
 # SERVICE VARIABLE
 inception_os_user_name: "ubuntu"
 mariadb_ip: "10.0.1.100"		# MariaDB VM Private IP
-mariadb_port: "7706"			# MariaDB Port
+mariadb_port: "7706"			# PaaS-TA Database Port -- Do Not Use "3306"&"13306" in mysql : for CVE
 mariadb_username: "root"		# MariaDB Root 계정 Username
-mariadb_password: "password007"		# MariaDB Root 계정 Password
+mariadb_password: "password007"		# MariaDB Root 계정 Password. 영문/숫자 혼용 10자 이상 : for CCE
 director_name: "micro-bosh"		# BOSH Director 명
 resource_url: "resource_url"		# TBD
 paasta_deploy_name: "paasta"		# PaaS-TA Deployment 명
@@ -15,7 +15,7 @@ mail_password: "aaaa"			# SMTP Server Admin Password
 mail_enable: "true"			# Alarm 발생시 Mail전송 여부
 mail_tls_enable: "true"			# SMTP 서버 인증시 TLS모드인경우 true
 redis_ip: "10.0.1.101"		# Redis Private IP
-redis_password: "password007"		# Redis 인증 Password
+redis_password: "password007"		# Redis 인증 Password. 영문/숫자 혼용 10자 이상 : for CCE
 utc_time_gap: "9"			# UTC Time Zone과 Client Time Zone과의 시간 차이
 public_network_name: "vip"		# Monitoring-WEB Public Network Name
 system_type: "PaaS,CaaS,SaaS"		# 모니터링할 환경 선택
