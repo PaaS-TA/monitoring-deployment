@@ -48,6 +48,7 @@ instance_groups:
         release: redis
         properties:
           password: ((redis_password))
+          protected_mode: ((redis_protected_mode))
   - name: sanity-tests
     azs: ((sanity_tests_azs))
     instances: ((sanity_tests_instances))
