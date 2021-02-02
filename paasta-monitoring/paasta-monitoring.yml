@@ -23,8 +23,8 @@ releases:
     version: '1.1.9'
   - name: redis
     version: '15.3.5'
-    url: http://45.248.73.44/index.php/s/4QCqb8mrifYPWwo/download
-    sha1: 23ff3ff933d56fdd4db47ab28b535646152dc6b2
+    url: http://45.248.73.44/index.php/s/RDE9JzwNCggGNXq/download
+    sha1: fe0ff226d209bb8e1ae4a8211a201a2367653df9
   - name: influxdb
     version: '1.8.3'
     url: http://45.248.73.44/index.php/s/icXj9A6eKYcR4Qz/download
