@@ -2,7 +2,7 @@
 deployment_name: "paasta"		# Deployment Name
 network_name: "default"			# VM에 별도로 지정하지 않는 Default Network Name
 inception_os_user_name: "ubuntu"	# Home User Name (Release File Path 설정 시 필요)
-haproxy_public_ip: "52.79.46.226"	# HAProxy IP (Public IP)
+haproxy_public_ip: "52.78.32.153"	# HAProxy IP (Public IP)
 haproxy_public_network_name: "vip"	# PaaS-TA Public Network Name
 cc_db_encryption_key: "db-encryption-key"	# Database Encryption Key (Version Upgrade 시 동일 KEY 필수)
 cert_days: 3650				# PaaS-TA 인증서 유효기간
@@ -32,8 +32,8 @@ smoke_tests_vm_type: "minimal"		# Smoke-Test VM 종류
 smoke_tests_network: "default"		# Smoke-Test 네트워크
 
 # NATS
-nats_azs: ["z1"]			# Nats 가용 존
-nats_instances: 1			# Nats 인스턴스 수
+nats_azs: ["z1", "z2"]			# Nats 가용 존
+nats_instances: 2			# Nats 인스턴스 수
 nats_vm_type: "minimal"			# Nats VM 종류
 nats_network: "default"			# Nats 네트워크
 
@@ -45,14 +45,14 @@ database_network: "default"		# Database 네트워크
 database_persistent_disk_type: "10GB"	# Database 영구 Disk 종류
 
 # DIEGO-API
-diego_api_azs: ["z1"]		# Diego-API 가용 존
-diego_api_instances: 1			# Diego-API 인스턴스 수
+diego_api_azs: ["z1", "z2"]		# Diego-API 가용 존
+diego_api_instances: 2			# Diego-API 인스턴스 수
 diego_api_vm_type: "small"		# Diego-API VM 종류
 diego_api_network: "default"		# Diego-API 네트워크
 
 # UAA
-uaa_azs: ["z1"]			# UAA 가용 존
-uaa_instances: 1			# UAA 인스턴스 수
+uaa_azs: ["z1", "z2"]			# UAA 가용 존
+uaa_instances: 2			# UAA 인스턴스 수
 uaa_vm_type: "minimal"			# UAA VM 종류
 uaa_network: "default"			# UAA 네트워크
 
@@ -64,61 +64,61 @@ singleton_blobstore_network: "default"	# Singleton-Blobstore 네트워크
 singleton_blobstore_persistent_disk_type: "100GB"	# Singleton-Blobstore 영구 Disk 종류
 
 # API
-api_azs: ["z1"]			# API 가용 존
-api_instances: 1			# API 인스턴스 수
+api_azs: ["z1", "z2"]			# API 가용 존
+api_instances: 2			# API 인스턴스 수
 api_vm_type: "small"			# API VM 종류
 api_network: "default"			# API 네트워크
 api_vm_extensions: ["50GB_ephemeral_disk"]	# API VM 확장
 
 # CC-WORKER
-cc_worker_azs: ["z1"]		# CC-Worker 가용 존
-cc_worker_instances: 1			# CC-Worker 인스턴스 수
+cc_worker_azs: ["z1", "z2"]		# CC-Worker 가용 존
+cc_worker_instances: 2			# CC-Worker 인스턴스 수
 cc_worker_vm_type: "minimal"		# CC-Worker VM 종류
 cc_worker_network: "default"		# CC-Worker 네트워크
 
 # SCHEDULER
-scheduler_azs: ["z1"]		# Scheduler 가용 존
-scheduler_instances: 1			# Scheduler 인스턴스 수
+scheduler_azs: ["z1", "z2"]		# Scheduler 가용 존
+scheduler_instances: 2			# Scheduler 인스턴스 수
 scheduler_vm_type: "minimal"		# Scheduler VM 종류
 scheduler_network: "default"		# Scheduler 네트워크
 scheduler_vm_extensions: ["diego-ssh-proxy-network-properties"] # Scheduler VM 확장
 
 # ROUTER
-router_azs: ["z1"]		# Router 가용 존
-router_instances: 1			# Router 인스턴스 수
+router_azs: ["z1", "z2"]		# Router 가용 존
+router_instances: 2			# Router 인스턴스 수
 router_vm_type: "minimal"		# Router VM 종류
 router_network: "default"		# Router 네트워크
 router_vm_extensions: ["cf-router-network-properties"]	# Router VM 확장
 
 # TCP-ROUTER
-tcp_router_azs: ["z1"]		# TCP-Router 가용 존
-tcp_router_instances: 1			# TCP-Router 인스턴스 수
+tcp_router_azs: ["z1", "z2"]		# TCP-Router 가용 존
+tcp_router_instances: 2			# TCP-Router 인스턴스 수
 tcp_router_vm_type: "minimal"		# TCP-Router VM 종류
 tcp_router_network: "default"		# TCP-Router 네트워크
 tcp_router_vm_extensions: ["cf-tcp-router-network-properties"]	# TCP-Router VM 확장
 
 # DOPPLER
-doppler_azs: ["z1"]		# Doppler 가용 존
-doppler_instances: 1			# Doppler 인스턴스 수
+doppler_azs: ["z1", "z2"]		# Doppler 가용 존
+doppler_instances: 4			# Doppler 인스턴스 수
 doppler_vm_type: "minimal"		# Doppler VM 종류
 doppler_network: "default"		# Doppler 네트워크
 
 # DIEGO-CELL
-diego_cell_azs: ["z1"]		# Diego-Cell 가용 존
+diego_cell_azs: ["z1", "z2"]		# Diego-Cell 가용 존
 diego_cell_instances: 3			# Diego-Cell 인스턴스 수
 diego_cell_vm_type: "small-highmem-16GB"		# Diego-Cell VM 종류
 diego_cell_network: "default"		# Diego-Cell 네트워크
 diego_cell_vm_extensions: ["100GB_ephemeral_disk"]	# Diego-Cell VM 확장
 
 # LOG-API
-log_api_azs: ["z1"]		# Log-API 가용 존
-log_api_instances: 1			# Log-API 인스턴스 수
+log_api_azs: ["z1", "z2"]		# Log-API 가용 존
+log_api_instances: 2			# Log-API 인스턴스 수
 log_api_vm_type: "minimal"		# Log-API VM 종류
 log_api_network: "default"		# Log-API 네트워크
 
 # CREDHUB
-credhub_azs: ["z1"]		# CredHub 가용 존
-credhub_instances: 1			# CredHub 인스턴스 수
+credhub_azs: ["z1", "z2"]		# CredHub 가용 존
+credhub_instances: 2			# CredHub 인스턴스 수
 credhub_vm_type: "minimal"		# CredHub VM 종류
 credhub_network: "default"		# CredHub 네트워크
 
