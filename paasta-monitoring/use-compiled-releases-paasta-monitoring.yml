@@ -30,7 +30,7 @@
   value: file:///home/((inception_os_user_name))/workspace/paasta-5.0/release/paasta-monitoring/influxdb.tgz
 - type: replace
   path: /releases/name=influxdb/version
-  value: '1.5.1'
+  value: '1.8.3'
 - type: replace
   path: /releases/name=influxdb/sha1
-  value: 2337d1f26f46100b8d438b50b71e300941da74a2
+  value: cd13a8616a217d00ebf1d5b779368f1e4095f3e1

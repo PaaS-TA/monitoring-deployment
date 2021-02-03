@@ -17,10 +17,13 @@ uaa_login_links_signup: "http://portal-web-user.15.165.2.88.xip.io/createuser"	#
 uaa_client_portal_redirect_uri: "http://portal-web-user.15.165.2.88.xip.io,http://portal-web-user.15.165.2.88.xip.io/callback"	# UAA Portal Client의 Redirect URI 지정 변수, 포탈에서 로그인 버튼 클릭 후 UAA 페이지에서 성공적으로 로그인했을 경우 이동하는 URI 경로
 
 
+syslog_custom_rule: 'if ($msg contains "DEBUG") then stop'      # [MONITORING] PaaS-TA Logging Agent에서 전송할 Custom Rule
+syslog_fallback_servers: []             # [MONITORING] PaaS-TA Syslog Fallback Servers
+
 
 # STEMCELL
 stemcell_os: "ubuntu-xenial"		# Stemcell OS
-stemcell_version: "621.78"		# Stemcell Version
+stemcell_version: "621.94"		# Stemcell Version
 
 # SMOKE-TEST
 smoke_tests_azs: ["z1"]			# Smoke-Test 가용 존
@@ -126,7 +129,7 @@ rotate_cc_database_key_vm_type: "minimal"	# Rotate-CC-Database-Key VM 종류
 rotate_cc_database_key_network: "default"	# Rotate-CC-Database-Key 네트워크
 
 # HAPROXY
-haproxy_azs: ["z7"]			# HAProxy 가용 존
+haproxy_azs: ["z3"]			# HAProxy 가용 존
 haproxy_instances: 1			# HAProxy 인스턴스 수
 haproxy_vm_type: "minimal"		# HAProxy VM 종류
 haproxy_network: "default"		# HAProxy 네트워크
