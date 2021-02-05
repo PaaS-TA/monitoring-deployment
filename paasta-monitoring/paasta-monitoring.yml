@@ -81,6 +81,8 @@ instance_groups:
             password: root
             replication: 1
             ips: 127.0.0.1
+            https_enabled: ((influxdb_https_enabled))
+            pem_key: ((pem_key))
       - name: chronograf
         release: influxdb
 
