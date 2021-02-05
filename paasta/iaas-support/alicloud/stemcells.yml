@@ -1,5 +1,0 @@
----
-# Light Stemcells
-- type: replace
-  path: /stemcells/alias=default/version?
-  value: 1018
