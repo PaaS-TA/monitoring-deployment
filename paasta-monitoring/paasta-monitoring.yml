@@ -27,8 +27,8 @@ releases:
     sha1: fe0ff226d209bb8e1ae4a8211a201a2367653df9
   - name: influxdb
     version: '1.8.3'
-    url: http://45.248.73.44/index.php/s/icXj9A6eKYcR4Qz/download
-    sha1: faa36d518a3e095fa6be036083cafb71e3329742
+    url: http://45.248.73.44/index.php/s/zSkQX3cXfRQPoYn/download
+    sha1: 56e52a02424cdae7bcfdcfed69d54d0b33e39a42
 
 
 instance_groups:
