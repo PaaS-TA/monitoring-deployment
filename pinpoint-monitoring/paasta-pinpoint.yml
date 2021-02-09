@@ -14,7 +14,7 @@ stemcells:
 
 releases:
   - name: paasta-pinpoint-monitoring-release
-    url: http://45.248.73.44/index.php/s/H6C5r9R4W8aLgc8/download
+    url: https://nextcloud.paas-ta.org/index.php/s/H6C5r9R4W8aLgc8/download
     version: 1.1
     sha1: c4472ffa463fe8af6a5b805a7268bcdbec030310
 
