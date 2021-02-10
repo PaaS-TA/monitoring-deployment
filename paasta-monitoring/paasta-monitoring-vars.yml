@@ -3,7 +3,7 @@ inception_os_user_name: "ubuntu"
 mariadb_ip: "10.0.1.100"		# MariaDB VM Private IP
 mariadb_port: "7706"			# PaaS-TA Database Port (e.g. 7706(mariadb)) -- Do Not Use "3306" in mysql
 mariadb_username: "root"		# MariaDB Root 계정 Username
-mariadb_password: "PaaS-TA@2020"		# MariaDB Root 계정 Password. 영문/숫자/특수문자 혼용 8자 이상
+mariadb_password: "PaaS-TA@2020"	# MariaDB Root 계정 Password. 영문/숫자/특수문자 혼용 8자 이상
 director_name: "micro-bosh"		# BOSH Director 명
 resource_url: "resource_url"		# TBD
 paasta_deploy_name: "paasta"		# PaaS-TA Deployment 명
@@ -14,10 +14,10 @@ mail_sender: "aaa@naver.com"		# SMTP Server Admin ID
 mail_password: "aaaa"			# SMTP Server Admin Password
 mail_enable: "true"			# Alarm 발생시 Mail전송 여부
 mail_tls_enable: "true"			# SMTP 서버 인증시 TLS모드인경우 true
-redis_ip: "10.0.1.101"		# Redis Private IP
+redis_ip: "10.0.1.101"		        # Redis Private IP
 redis_password: "PaaS-TA@2020"		# Redis 인증 Password. 영문/숫자/특수문자 혼용 8자 이상
 redis_protected_mode: "yes"		# Redis 루프백 인터페이스 쿼리 응답 설정
-influxdb_password: "PaaS-TA@2020"		# Influxdb Admin Password
+influxdb_password: "PaaS-TA@2020"	# Influxdb Admin Password
 influxdb_https_enabled: "true"		# Influxdb HTTPS 설정
 utc_time_gap: "9"			# UTC Time Zone과 Client Time Zone과의 시간 차이
 public_network_name: "vip"		# Monitoring-WEB Public Network Name
@@ -46,7 +46,7 @@ sanity_tests_vm_type: "small"		# Sanity-Test VM 종류
 sanity_tests_network: "default"		# Sanity-Test 네트워크
 
 # INFLUXDB
-influxdb_azs: ["z1"]			# InfluxDB 가용 존
+influxdb_azs: ["z3"]			# InfluxDB 가용 존
 influxdb_instances: 1			# InfluxDB 인스턴스 수
 influxdb_vm_type: "large"		# InfluxDB VM 종류
 influxdb_network: "default"		# InfluxDB 네트워크
