@@ -27,8 +27,8 @@ releases:
     sha1: fe0ff226d209bb8e1ae4a8211a201a2367653df9
   - name: influxdb
     version: '1.8.4'
-    url: https://nextcloud.paas-ta.org/index.php/s/PwDeMPAjM36c62Z/download
-    sha1: 40926bbbb209c398f0d147c463ae061238b70d6e
+    url: https://nextcloud.paas-ta.org/index.php/s/r5qb3LKZE2t2zmx/download
+    sha1: a7b87b8dba41dbf549e14fd383bc44335c9bce07
 
 
 instance_groups:
@@ -85,6 +85,10 @@ instance_groups:
             pem_key: ((influxdb_ssl.certificate))((influxdb_ssl.private_key))
       - name: chronograf
         release: influxdb
+        properties:
+          chronograf:
+            https_enabled: ((influxdb_https_enabled))
+            password: ((influxdb_password))
 
   - name: mariadb
     azs: ((mariadb_azs))
