@@ -78,7 +78,7 @@ instance_groups:
           influxdb:
             database: cf_metric_db
             user: root
-            password: root
+            password: ((influxdb_password))
             replication: 1
             ips: 127.0.0.1
             https_enabled: ((influxdb_https_enabled))
