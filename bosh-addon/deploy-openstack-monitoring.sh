@@ -5,6 +5,7 @@ bosh create-env bosh.yml \
 	--vars-store=openstack/creds.yml \
 	-o openstack/cpi.yml \
 	-o uaa.yml \
+	-o cce.yml \
 	-o credhub.yml \
 	-o jumpbox-user.yml \
 	-o openstack/disable-readable-vm-names.yml \
