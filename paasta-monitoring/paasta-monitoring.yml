@@ -27,8 +27,8 @@ releases:
     sha1: fe0ff226d209bb8e1ae4a8211a201a2367653df9
   - name: influxdb
     version: '1.8.4'
-    url: https://nextcloud.paas-ta.org/index.php/s/dtaPwdYnGSJrip3/download
-    sha1: 32dadc4feb0cca940e06ec739a4adb2cdffacfb2
+    url: https://nextcloud.paas-ta.org/index.php/s/Kp4GLqMiN6DtNmt/download
+    sha1: 5a1ab47d7495701a5e1ed7276dc08aa039c30a8f
 
 
 instance_groups:
