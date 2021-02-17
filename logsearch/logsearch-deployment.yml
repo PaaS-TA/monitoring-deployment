@@ -38,7 +38,7 @@ instance_groups:
               xpack.ml.enabled: false
               xpack.security.enabled: false
               xpack.watcher.enabled: false
-              xpack.security.transport.ssl.enabled: false
+              # xpack.security.transport.ssl.enabled: false
 
   - name: maintenance
     azs: ((maintenance_azs))
@@ -169,10 +169,10 @@ instance_groups:
 releases:
   - name: logsearch
     # url: https://s3.amazonaws.com/logsearch/logsearch-211.1.0.tgz
-    url: https://nextcloud.paas-ta.org/index.php/s/HXTnLT54LeQKges/download
-    version: 211.1.0
+    url: https://nextcloud.paas-ta.org/index.php/s/Ym7ewqW4drfyxeS/download
+    version: 211.1.1
     # sha1: fa1cd0dc846b163ea619cc0149c2379daee06025
-    sha1: 56301fe1178a653b879a502a63698a41b063917c
+    sha1: ea58e4e826b42fa05ba29f6cb06ee54d0e71213d
 
   - name: bpm
     url: https://bosh.io/d/github.com/cloudfoundry/bpm-release?v=1.1.6
