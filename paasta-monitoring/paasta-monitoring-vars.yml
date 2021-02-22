@@ -3,7 +3,7 @@ inception_os_user_name: "ubuntu"
 mariadb_ip: "10.0.1.100"		# MariaDB VM Private IP
 mariadb_port: "7706"			# PaaS-TA Database Port (e.g. 7706(mariadb)) -- Do Not Use "3306" in mysql
 mariadb_username: "root"		# MariaDB Root 계정 Username
-mariadb_password: "PaaS-TA2020"	# MariaDB Root 계정 Password. 영문/숫자/특수문자 혼용 8자 이상
+mariadb_password: "PaaS-TA2020"	        # MariaDB Root 계정 Password. 영문/숫자/특수문자 혼용 8자 이상
 director_name: "micro-bosh"		# BOSH Director 명
 resource_url: "resource_url"		# TBD
 paasta_deploy_name: "paasta"		# PaaS-TA Deployment 명
