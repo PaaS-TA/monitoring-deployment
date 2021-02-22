@@ -23,8 +23,8 @@ releases:
     sha1: dcf0582d838a73de29da273552ae79ac3098ee8b
   - name: redis
     version: '15.3.5'
-    url: https://nextcloud.paas-ta.org/index.php/s/RDE9JzwNCggGNXq/download
-    sha1: fe0ff226d209bb8e1ae4a8211a201a2367653df9
+    url: https://nextcloud.paas-ta.org/index.php/s/sxpJ2QcHLNqX8ej/download
+    sha1: 04d75f02df392351d7cbee121cb62d19091ee6dd
   - name: influxdb
     version: '1.8.4'
     url: https://nextcloud.paas-ta.org/index.php/s/Kp4GLqMiN6DtNmt/download
