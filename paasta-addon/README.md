@@ -17,3 +17,7 @@ cp ~/workspace/paasta-5.5.1/deployment/monitoring-deployment/paasta-addon/operat
 # operations/ 디렉터리가 paasta 설치 경로에 없다면 전체 복사
 cp -r ~/workspace/paasta-5.5.1/deployment/monitoring-deployment/paasta-addon/operations ~/workspace/paasta-5.5.1/deployment/paasta-deployment/paasta
 ```
+
+~/workspace/paasta-5.5.1/deployment/monitoring-deployment/paasta-addon/operations/cce.yml  
+파일은 모니터링을 위해 수정한 diego-cell 정보가 paasta 와 별도 파일을 적용하게 구성되어 있어  
+모니터링을 설치하고자 한다면 이곳에 cce.yml 을 적용해야 한다
