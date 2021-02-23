@@ -14,7 +14,7 @@ stemcells:
 
 releases:
   - name: paasta-monitoring-release
-    sha1: 401b6ad06c98af4055e65da82d118d644f22c290
+    sha1: a9a55b998c3f73029eb91a1a7af6e9463dad369e
     version: "5.5" 
     url: https://nextcloud.paas-ta.org/index.php/s/EZkyKzt2Aa398tA/download
   - name: bpm
