@@ -20,7 +20,6 @@ cp -r ~/workspace/paasta-5.5.0/deployment/monitoring-deployment/paasta-addon/ope
 
 cp ~/workspace/paasta-5.5.0/deployment/monitoring-deployment/paasta-addon/operations/cce.yml ~/workspace/paasta-5.5.0/deployment/paasta-deployment/paasta/operations/  
 ```
-
 ~/workspace/paasta-5.5.0/deployment/monitoring-deployment/paasta-addon/operations/cce.yml  
 파일은 모니터링을 위해 수정한 diego-cell 정보가 paasta 와 별도 파일을 적용하게 구성되어 있어  
 모니터링을 설치하고자 한다면 이곳에 cce.yml 을 적용해야 한다
