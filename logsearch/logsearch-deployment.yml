@@ -8,180 +8,375 @@ update:
   update_watch_time: 5000-1200000
 
 instance_groups:
-  - name: elasticsearch_master
-    azs: ((elasticsearch_master_azs))
-    instances: ((elasticsearch_master_instances))
-    persistent_disk_type: ((elasticsearch_master_persistent_disk_type))
-    vm_type: ((elasticsearch_master_vm_type))
-    stemcell: default
-    update:
-      max_in_flight: 1
-      serial: true
-    networks:
-      - name: ((elasticsearch_master_network))
-    jobs:
-      - name: bpm
-        release: bpm
-      - name: elasticsearch
-        release: logsearch
-        consumes:
-          elasticsearch: {from: elasticsearch_master}
-        provides:
-          elasticsearch: {as: elasticsearch_master}
-        properties:
-          elasticsearch:
-            node:
-              allow_master: true
-            config_options: &xpack-options
-              xpack.monitoring.enabled: false
-              xpack.graph.enabled: false
-              xpack.ml.enabled: false
-              xpack.security.enabled: false
-              xpack.watcher.enabled: false
-              # xpack.security.transport.ssl.enabled: false
+- name: elasticsearch_master
+  azs: ((elasticsearch_master_azs))
+  instances: ((elasticsearch_master_instances))
+  persistent_disk_type: ((elasticsearch_master_persistent_disk_type))
+  vm_type: ((elasticsearch_master_vm_type))
+  stemcell: default
+  update:
+    max_in_flight: 1
+    serial: true
+  networks:
+  - name: ((elasticsearch_master_network))
+  jobs:
+  - name: bpm
+    release: bpm
+  - name: elasticsearch
+    release: logsearch
+    consumes:
+      elasticsearch: {from: elasticsearch_master}
+    provides:
+      elasticsearch: {as: elasticsearch_master}
+    properties:
+      elasticsearch:
+        node:
+          allow_master: true
+        config_options: &xpack-options
+        #          xpack.monitoring.enabled: false
+        #          xpack.graph.enabled: false
+        #          xpack.ml.enabled: false
+        #          xpack.security.enabled: false
+        #          xpack.watcher.enabled: false
+        #          xpack.security.transport.ssl.enabled: false
+      searchguard:
+        options: &searchguard_options
+          account:
+            id: admin
+            password: logsearch
+          secureguard:
+            edited:
+              configuration:
+                searchguard.allow_unsafe_democertificates: true
+                searchguard.audit.type: internal_elasticsearch
+                searchguard.enable_snapshot_restore_privilege: true
+                searchguard.check_snapshot_restore_write_privileges: true
+                searchguard.restapi.roles_enabled: ["SGS_ALL_ACCESS"]
+                cluster.routing.allocation.disk.threshold_enabled: false
+                node.max_local_storage_nodes: 3
+              tls:
+                searchguard.nodes_dn:
+                  "\n - CN=elasticsearch_master\\/0,OU=client,O=client,L=test, C=de\n
+                  - CN=elasticsearch_data\\/0,OU=client,O=client,L=test, C=de\n
+                  - CN=elasticsearch_data\\/1,OU=client,O=client,L=test, C=de\n
+                  - CN=ingestor\\/0,OU=client,O=client,L=test, C=de\n
+                  - CN=ingestor\\/1,OU=client,O=client,L=test, C=de\n
+                  - CN=kibana\\/0,OU=client,O=client,L=test, C=de\n
+                  - CN=maintenance\\/0,OU=client,O=client,L=test, C=de\n
+                  - CN=node-0.example.com,OU=node,O=node,L=test,DC=de\n
+                  - CN=kirk,OU=client,O=client,L=test, C=de"
+                searchguard.authcz.admin_dn:
+                  "\n - CN=kirk,OU=client,O=client,L=test, C=de"
+            fixed:
+              searchguard.enterprise_modules_enabled: false
+              searchguard.ssl.transport.pemcert_filepath: /var/vcap/jobs/elasticsearch/config/esnode.pem
+              searchguard.ssl.transport.pemkey_filepath: /var/vcap/jobs/elasticsearch/config/esnode-key.pem
+              searchguard.ssl.transport.pemtrustedcas_filepath: /var/vcap/jobs/elasticsearch/config/root-ca.pem
+              searchguard.ssl.transport.enforce_hostname_verification: false
+              searchguard.ssl.transport.resolve_hostname: false
+              searchguard.ssl.http.enabled: true
+              searchguard.ssl.http.pemcert_filepath: /var/vcap/jobs/elasticsearch/config/esnode.pem
+              searchguard.ssl.http.pemkey_filepath: /var/vcap/jobs/elasticsearch/config/esnode-key.pem
+              searchguard.ssl.http.pemtrustedcas_filepath: /var/vcap/jobs/elasticsearch/config/root-ca.pem
+          ca_cert:
+              SG_ADMIN_CERT: | 
+                  -----BEGIN CERTIFICATE-----
+                  MIIEdzCCA1+gAwIBAgIGAWLrc1O4MA0GCSqGSIb3DQEBCwUAMIGPMRMwEQYKCZIm
+                  iZPyLGQBGRYDY29tMRcwFQYKCZImiZPyLGQBGRYHZXhhbXBsZTEZMBcGA1UECgwQ
+                  RXhhbXBsZSBDb20gSW5jLjEhMB8GA1UECwwYRXhhbXBsZSBDb20gSW5jLiBSb290
+                  IENBMSEwHwYDVQQDDBhFeGFtcGxlIENvbSBJbmMuIFJvb3QgQ0EwHhcNMTgwNDIy
+                  MDM0MzQ3WhcNMjgwNDE5MDM0MzQ3WjBNMQswCQYDVQQGEwJkZTENMAsGA1UEBwwE
+                  dGVzdDEPMA0GA1UECgwGY2xpZW50MQ8wDQYDVQQLDAZjbGllbnQxDTALBgNVBAMM
+                  BGtpcmswggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDCwgBOoO88uMM8
+                  dREJsk58Yt4Jn0zwQ2wUThbvy3ICDiEWhiAhUbg6dTggpS5vWWJto9bvaaqgMVoh
+                  ElfYHdTDncX3UQNBEP8tqzHON6BFEFSGgJRGLd6f5dri6rK32nCotYS61CFXBFxf
+                  WumXjSukjyrcTsdkR3C5QDo2oN7F883MOQqRENPzAtZi9s3jNX48u+/e3yvJzXsB
+                  GS9Qmsye6C71enbIujM4CVwDT/7a5jHuaUp6OuNCFbdRPnu/wLYwOS2/yOtzAqk7
+                  /PFnPCe7YOa10ShnV/jx2sAHhp7ZQBJgFkkgnIERz9Ws74Au+EbptWnsWuB+LqRL
+                  x5G02IzpAgMBAAGjggEYMIIBFDCBvAYDVR0jBIG0MIGxgBSSNQzgDx4rRfZNOfN7
+                  X6LmEpdAc6GBlaSBkjCBjzETMBEGCgmSJomT8ixkARkWA2NvbTEXMBUGCgmSJomT
+                  8ixkARkWB2V4YW1wbGUxGTAXBgNVBAoMEEV4YW1wbGUgQ29tIEluYy4xITAfBgNV
+                  BAsMGEV4YW1wbGUgQ29tIEluYy4gUm9vdCBDQTEhMB8GA1UEAwwYRXhhbXBsZSBD
+                  b20gSW5jLiBSb290IENBggEBMB0GA1UdDgQWBBRsdhuHn3MGDvZxOe22+1wliCJB
+                  mDAMBgNVHRMBAf8EAjAAMA4GA1UdDwEB/wQEAwIF4DAWBgNVHSUBAf8EDDAKBggr
+                  BgEFBQcDAjANBgkqhkiG9w0BAQsFAAOCAQEAkPrUTKKn+/6g0CjhTPBFeX8mKXhG
+                  zw5z9Oq+xnwefZwxV82E/tgFsPcwXcJIBg0f43BaVSygPiV7bXqWhxASwn73i24z
+                  lveIR4+z56bKIhP6c3twb8WWR9yDcLu2Iroin7dYEm3dfVUrhz/A90WHr6ddwmLL
+                  3gcFF2kBu3S3xqM5OmN/tqRXFmo+EvwrdJRiTh4Fsf0tX1ZT07rrGvBFYktK7Kma
+                  lqDl4UDCF1UWkiiFubc0Xw+DR6vNAa99E0oaphzvCmITU1wITNnYZTKzVzQ7vUCq
+                  kLmXOFLTcxTQpptxSo5xDD3aTpzWGCvjExCKpXQtsITUOYtZc02AGjjPOQ==
+                  -----END CERTIFICATE-----
 
-  - name: maintenance
-    azs: ((maintenance_azs))
-    instances: ((maintenance_instances))
-    persistent_disk_type: ((maintenance_persistent_disk_type))
-    vm_type: ((maintenance_vm_type))
-    stemcell: default
-    update:
-      serial: true
-    networks:
-      - name: ((maintenance_network))
-    jobs:
-      - name: bpm
-        release: bpm
-      - name: elasticsearch
-        release: logsearch
-        consumes:
-          elasticsearch: {from: elasticsearch_master}
-        properties:
-          elasticsearch:
-            config_options: *xpack-options
-      - name: elasticsearch_config
-        release: logsearch
-        properties:
-          elasticsearch_config:
-            index_prefix: logs-
-            templates:
-              - shards-and-replicas: /var/vcap/jobs/elasticsearch_config/index-templates/shards-and-replicas.json
-              - index-settings: /var/vcap/jobs/elasticsearch_config/index-templates/index-settings.json
-              - index-mappings: /var/vcap/jobs/elasticsearch_config/index-templates/index-mappings.json
-      - name: curator
-        release: logsearch
-      - name: smoke_tests
-        release: logsearch
-        consumes:
-          elasticsearch: {from: elasticsearch_master}
-          ingestor_link: {from: ingestor_syslog}
 
-  - name: elasticsearch_data
-    azs: ((elasticsearch_data_azs))
-    instances: ((elasticsearch_data_instances))
-    persistent_disk_type: ((elasticsearch_data_persistent_disk_type))
-    vm_type: ((elasticsearch_data_vm_type))
-    stemcell: default
-    update:
-      max_in_flight: 1
-      serial: true
-    networks:
-      - name: ((elasticsearch_data_network))
-    jobs:
-      - name: bpm
-        release: bpm
-      - name: elasticsearch
-        release: logsearch
-        consumes:
-          elasticsearch: {from: elasticsearch_master}
-        properties:
-          elasticsearch:
-            node:
-              allow_data: true
-            config_options: *xpack-options
+              SG_ADMIN_CERT_KEY: |
+                  -----BEGIN PRIVATE KEY-----
+                  MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDCwgBOoO88uMM8
+                  dREJsk58Yt4Jn0zwQ2wUThbvy3ICDiEWhiAhUbg6dTggpS5vWWJto9bvaaqgMVoh
+                  ElfYHdTDncX3UQNBEP8tqzHON6BFEFSGgJRGLd6f5dri6rK32nCotYS61CFXBFxf
+                  WumXjSukjyrcTsdkR3C5QDo2oN7F883MOQqRENPzAtZi9s3jNX48u+/e3yvJzXsB
+                  GS9Qmsye6C71enbIujM4CVwDT/7a5jHuaUp6OuNCFbdRPnu/wLYwOS2/yOtzAqk7
+                  /PFnPCe7YOa10ShnV/jx2sAHhp7ZQBJgFkkgnIERz9Ws74Au+EbptWnsWuB+LqRL
+                  x5G02IzpAgMBAAECggEAEzwnMkeBbqqDgyRqFbO/PgMNvD7i0b/28V0dCtCPEVY6
+                  klzrg3RCERP5V9AN8VVkppYjPkCzZ2A4b0JpMUu7ncOmr7HCnoSCj2IfEyePSVg+
+                  4OHbbcBOAoDTHiI2myM/M9++8izNS34qGV4t6pfjaDyeQQ/5cBVWNBWnKjS34S5H
+                  rJWpAcDgxYk5/ah2Xs2aULZlXDMxbSikjrv+n4JIYTKFQo8ydzL8HQDBRmXAFLjC
+                  gNOSHf+5u1JdpY3uPIxK1ugVf8zPZ4/OEB23j56uu7c8+sZ+kZwfRWAQmMhFVG/y
+                  OXxoT5mOruBsAw29m2Ijtxg252/YzSTxiDqFziB/eQKBgQDjeVAdi55GW/bvhuqn
+                  xME/An8E3hI/FyaaITrMQJUBjiCUaStTEqUgQ6A7ZfY/VX6qafOX7sli1svihrXC
+                  uelmKrdve/CFEEqzX9JWWRiPiQ0VZD+EQRsJvX85Tw2UGvVUh6dO3UGPS0BhplMD
+                  jeVpyXgZ7Gy5we+DWjfwhYrCmwKBgQDbLmQhRy+IdVljObZmv3QtJ0cyxxZETWzU
+                  MKmgBFvcRw+KvNwO+Iy0CHEbDu06Uj63kzI2bK3QdINaSrjgr8iftXIQpBmcgMF+
+                  a1l5HtHlCp6RWd55nWQOEvn36IGN3cAaQkXuh4UYM7QfEJaAbzJhyJ+wXA3jWqUd
+                  8bDTIAZ0ywKBgFuZ44gyTAc7S2JDa0Up90O/ZpT4NFLRqMrSbNIJg7d/m2EIRNkM
+                  HhCzCthAg/wXGo3XYq+hCdnSc4ICCzmiEfoBY6LyPvXmjJ5VDOeWs0xBvVIK74T7
+                  jr7KX2wdiHNGs9pZUidw89CXVhK8nptEzcheyA1wZowbK68yamph7HHXAoGBAK3x
+                  7D9Iyl1mnDEWPT7f1Gh9UpDm1TIRrDvd/tBihTCVKK13YsFy2d+LD5Bk0TpGyUVR
+                  STlOGMdloFUJFh4jA3pUOpkgUr8Uo/sbYN+x6Ov3+I3sH5aupRhSURVA7YhUIz/z
+                  tqIt5R+m8Nzygi6dkQNvf+Qruk3jw0S3ahizwsvvAoGAL7do6dTLp832wFVxkEf4
+                  gg1M6DswfkgML5V/7GQ3MkIX/Hrmiu+qSuHhDGrp9inZdCDDYg5+uy1+2+RBMRZ3
+                  vDUUacvc4Fep05zp7NcjgU5y+/HWpuKVvLIlZAO1MBY4Xinqqii6RdxukIhxw7eT
+                  C6TPL5KAcV1R/XAihDhI18Y=
+                  -----END PRIVATE KEY-----
 
+
+              NODE_CERT: |
+                  -----BEGIN CERTIFICATE-----
+                  MIIEyTCCA7GgAwIBAgIGAWLrc1O2MA0GCSqGSIb3DQEBCwUAMIGPMRMwEQYKCZIm
+                  iZPyLGQBGRYDY29tMRcwFQYKCZImiZPyLGQBGRYHZXhhbXBsZTEZMBcGA1UECgwQ
+                  RXhhbXBsZSBDb20gSW5jLjEhMB8GA1UECwwYRXhhbXBsZSBDb20gSW5jLiBSb290
+                  IENBMSEwHwYDVQQDDBhFeGFtcGxlIENvbSBJbmMuIFJvb3QgQ0EwHhcNMTgwNDIy
+                  MDM0MzQ3WhcNMjgwNDE5MDM0MzQ3WjBeMRIwEAYKCZImiZPyLGQBGRYCZGUxDTAL
+                  BgNVBAcMBHRlc3QxDTALBgNVBAoMBG5vZGUxDTALBgNVBAsMBG5vZGUxGzAZBgNV
+                  BAMMEm5vZGUtMC5leGFtcGxlLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCC
+                  AQoCggEBAJa+f476vLB+AwK53biYByUwN+40D8jMIovGXm6wgT8+9Sbs899dDXgt
+                  9CE1Beo65oP1+JUz4c7UHMrCY3ePiDt4cidHVzEQ2g0YoVrQWv0RedS/yx/DKhs8
+                  Pw1O715oftP53p/2ijD5DifFv1eKfkhFH+lwny/vMSNxellpl6NxJTiJVnQ9HYOL
+                  gf2t971ITJHnAuuxUF48HcuNovW4rhtkXef8kaAN7cE3LU+A9T474ULNCKkEFPIl
+                  ZAKN3iJNFdVsxrTU+CUBHzk73Do1cCkEvJZ0ZFjp0Z3y8wLY/gqWGfGVyA9l2CUq
+                  eIZNf55PNPtGzOrvvONiui48vBKH1LsCAwEAAaOCAVkwggFVMIG8BgNVHSMEgbQw
+                  gbGAFJI1DOAPHitF9k0583tfouYSl0BzoYGVpIGSMIGPMRMwEQYKCZImiZPyLGQB
+                  GRYDY29tMRcwFQYKCZImiZPyLGQBGRYHZXhhbXBsZTEZMBcGA1UECgwQRXhhbXBs
+                  ZSBDb20gSW5jLjEhMB8GA1UECwwYRXhhbXBsZSBDb20gSW5jLiBSb290IENBMSEw
+                  HwYDVQQDDBhFeGFtcGxlIENvbSBJbmMuIFJvb3QgQ0GCAQEwHQYDVR0OBBYEFKyv
+                  78ZmFjVKM9g7pMConYH7FVBHMAwGA1UdEwEB/wQCMAAwDgYDVR0PAQH/BAQDAgXg
+                  MCAGA1UdJQEB/wQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjA1BgNVHREELjAsiAUq
+                  AwQFBYISbm9kZS0wLmV4YW1wbGUuY29tgglsb2NhbGhvc3SHBH8AAAEwDQYJKoZI
+                  hvcNAQELBQADggEBAIOKuyXsFfGv1hI/Lkpd/73QNqjqJdxQclX57GOMWNbOM5H0
+                  5/9AOIZ5JQsWULNKN77aHjLRr4owq2jGbpc/Z6kAd+eiatkcpnbtbGrhKpOtoEZy
+                  8KuslwkeixpzLDNISSbkeLpXz4xJI1ETMN/VG8ZZP1bjzlHziHHDu0JNZ6TnNzKr
+                  XzCGMCohFfem8vnKNnKUneMQMvXd3rzUaAgvtf7Hc2LTBlf4fZzZF1EkwdSXhaMA
+                  1lkfHiqOBxtgeDLxCHESZ2fqgVqsWX+t3qHQfivcPW6txtDyrFPRdJOGhiMGzT/t
+                  e/9kkAtQRgpTb3skYdIOOUOV0WGQ60kJlFhAzIs=
+                  -----END CERTIFICATE-----
+
+
+              NODE_KEY: |
+                  -----BEGIN PRIVATE KEY-----
+                  MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCWvn+O+rywfgMC
+                  ud24mAclMDfuNA/IzCKLxl5usIE/PvUm7PPfXQ14LfQhNQXqOuaD9fiVM+HO1BzK
+                  wmN3j4g7eHInR1cxENoNGKFa0Fr9EXnUv8sfwyobPD8NTu9eaH7T+d6f9oow+Q4n
+                  xb9Xin5IRR/pcJ8v7zEjcXpZaZejcSU4iVZ0PR2Di4H9rfe9SEyR5wLrsVBePB3L
+                  jaL1uK4bZF3n/JGgDe3BNy1PgPU+O+FCzQipBBTyJWQCjd4iTRXVbMa01PglAR85
+                  O9w6NXApBLyWdGRY6dGd8vMC2P4KlhnxlcgPZdglKniGTX+eTzT7Rszq77zjYrou
+                  PLwSh9S7AgMBAAECggEABwiohxFoEIwws8XcdKqTWsbfNTw0qFfuHLuK2Htf7IWR
+                  htlzn66F3F+4jnwc5IsPCoVFriCXnsEC/usHHSMTZkL+gJqxlNaGdin6DXS/aiOQ
+                  nb69SaQfqNmsz4ApZyxVDqsQGkK0vAhDAtQVU45gyhp/nLLmmqP8lPzMirOEodmp
+                  U9bA8t/ttrzng7SVAER42f6IVpW0iTKTLyFii0WZbq+ObViyqib9hVFrI6NJuQS+
+                  IelcZB0KsSi6rqIjXg1XXyMiIUcSlhq+GfEa18AYgmsbPwMbExate7/8Ci7ZtCbh
+                  lx9bves2+eeqq5EMm3sMHyhdcg61yzd5UYXeZhwJkQKBgQDS9YqrAtztvLY2gMgv
+                  d+wOjb9awWxYbQTBjx33kf66W+pJ+2j8bI/XX2CpZ98w/oq8VhMqbr9j5b8MfsrF
+                  EoQvedA4joUo8sXd4j1mR2qKF4/KLmkgy6YYusNP2UrVSw7sh77bzce+YaVVoO/e
+                  0wIVTHuD/QZ6fG6MasOqcbl6hwKBgQC27cQruaHFEXR/16LrMVAX+HyEEv44KOCZ
+                  ij5OE4P7F0twb+okngG26+OJV3BtqXf0ULlXJ+YGwXCRf6zUZkld3NMy3bbKPgH6
+                  H/nf3BxqS2tudj7+DV52jKtisBghdvtlKs56oc9AAuwOs37DvhptBKUPdzDDqfys
+                  Qchv5JQdLQKBgERev+pcqy2Bk6xmYHrB6wdseS/4sByYeIoi0BuEfYH4eB4yFPx6
+                  UsQCbVl6CKPgWyZe3ydJbU37D8gE78KfFagtWoZ56j4zMF2RDUUwsB7BNCDamce/
+                  OL2bCeG/Erm98cBG3lxufOX+z47I8fTNfkdY2k8UmhzoZwurLm73HJ3RAoGBAKsp
+                  6yamuXF2FbYRhUXgjHsBbTD/vJO72/yO2CGiLRpi/5mjfkjo99269trp0C8sJSub
+                  5PBiSuADXFsoRgUv+HI1UAEGaCTwxFTQWrRWdtgW3d0sE2EQDVWL5kmfT9TwSeat
+                  mSoyAYR5t3tCBNkPJhbgA7pm4mASzHQ50VyxWs25AoGBAKPFx9X2oKhYQa+mW541
+                  bbqRuGFMoXIIcr/aeM3LayfLETi48o5NDr2NDP11j4yYuz26YLH0Dj8aKpWuehuH
+                  uB27n6j6qu0SVhQi6mMJBe1JrKbzhqMKQjYOoy8VsC2gdj5pCUP/kLQPW7zm9diX
+                  CiKTtKgPIeYdigor7V3AHcVT
+                  -----END PRIVATE KEY-----
+
+
+              ROOT_CA: |
+                  -----BEGIN CERTIFICATE-----
+                  MIID/jCCAuagAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjzETMBEGCgmSJomT8ixk
+                  ARkWA2NvbTEXMBUGCgmSJomT8ixkARkWB2V4YW1wbGUxGTAXBgNVBAoMEEV4YW1w
+                  bGUgQ29tIEluYy4xITAfBgNVBAsMGEV4YW1wbGUgQ29tIEluYy4gUm9vdCBDQTEh
+                  MB8GA1UEAwwYRXhhbXBsZSBDb20gSW5jLiBSb290IENBMB4XDTE4MDQyMjAzNDM0
+                  NloXDTI4MDQxOTAzNDM0NlowgY8xEzARBgoJkiaJk/IsZAEZFgNjb20xFzAVBgoJ
+                  kiaJk/IsZAEZFgdleGFtcGxlMRkwFwYDVQQKDBBFeGFtcGxlIENvbSBJbmMuMSEw
+                  HwYDVQQLDBhFeGFtcGxlIENvbSBJbmMuIFJvb3QgQ0ExITAfBgNVBAMMGEV4YW1w
+                  bGUgQ29tIEluYy4gUm9vdCBDQTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoC
+                  ggEBAK/u+GARP5innhpXK0c0q7s1Su1VTEaIgmZr8VWI6S8amf5cU3ktV7WT9SuV
+                  TsAm2i2A5P+Ctw7iZkfnHWlsC3HhPUcd6mvzGZ4moxnamM7r+a9otRp3owYoGStX
+                  ylVTQusAjbq9do8CMV4hcBTepCd+0w0v4h6UlXU8xjhj1xeUIz4DKbRgf36q0rv4
+                  VIX46X72rMJSETKOSxuwLkov1ZOVbfSlPaygXIxqsHVlj1iMkYRbQmaTib6XWHKf
+                  MibDaqDejOhukkCjzpptGZOPFQ8002UtTTNv1TiaKxkjMQJNwz6jfZ53ws3fh1I0
+                  RWT6WfM4oeFRFnyFRmc4uYTUgAkCAwEAAaNjMGEwDwYDVR0TAQH/BAUwAwEB/zAf
+                  BgNVHSMEGDAWgBSSNQzgDx4rRfZNOfN7X6LmEpdAczAdBgNVHQ4EFgQUkjUM4A8e
+                  K0X2TTnze1+i5hKXQHMwDgYDVR0PAQH/BAQDAgGGMA0GCSqGSIb3DQEBCwUAA4IB
+                  AQBoQHvwsR34hGO2m8qVR9nQ5Klo5HYPyd6ySKNcT36OZ4AQfaCGsk+SecTi35QF
+                  RHL3g2qffED4tKR0RBNGQSgiLavmHGCh3YpDupKq2xhhEeS9oBmQzxanFwWFod4T
+                  nnsG2cCejyR9WXoRzHisw0KJWeuNlwjUdJY0xnn16srm1zL/M/f0PvCyh9HU1mF1
+                  ivnOSqbDD2Z7JSGyckgKad1Omsg/rr5XYtCeyJeXUPcmpeX6erWJJNTUh6yWC/hY
+                  G/dFC4xrJhfXwz6Z0ytUygJO32bJG4Np2iGAwvvgI9EfxzEv/KP+FGrJOvQJAq4/
+                  BU36ZAa80W/8TBnqZTkNnqZV
+                  -----END CERTIFICATE-----
+
+
+- name: maintenance
+  azs: ((maintenance_azs))
+  instances: ((maintenance_instances))
+  persistent_disk_type: ((maintenance_persistent_disk_type))
+  vm_type: ((maintenance_vm_type))
+  stemcell: default
+  update:
+    serial: true
+  networks:
+  - name: ((maintenance_network))
+  jobs:
+  - name: bpm
+    release: bpm
+  - name: elasticsearch
+    release: logsearch
+    consumes:
+      elasticsearch: {from: elasticsearch_master}
+    properties:
+      elasticsearch:
+        config_options: *xpack-options
+      searchguard:
+        options: *searchguard_options
+  - name: elasticsearch_config
+    release: logsearch
+    properties:
+      elasticsearch_config:
+        index_prefix: logs-
+        templates:
+          - shards-and-replicas: /var/vcap/jobs/elasticsearch_config/index-templates/shards-and-replicas.json
+          - index-settings: /var/vcap/jobs/elasticsearch_config/index-templates/index-settings.json
+          - index-mappings: /var/vcap/jobs/elasticsearch_config/index-templates/index-mappings.json
+  - name: curator
+    release: logsearch
+  - name: smoke_tests
+    release: logsearch
+    consumes:
+      elasticsearch: {from: elasticsearch_master}
+      ingestor_link: {from: ingestor_syslog}
+- name: elasticsearch_data
+  azs: ((elasticsearch_data_azs))
+  instances: ((elasticsearch_data_instances))
+  persistent_disk_type: ((elasticsearch_data_persistent_disk_type))
+  vm_type: ((elasticsearch_data_vm_type))
+  stemcell: default
+  update:
+    max_in_flight: 1
+    serial: true
+  networks:
+  - name: ((elasticsearch_data_network))
+  jobs:
+  - name: bpm
+    release: bpm
+  - name: elasticsearch
+    release: logsearch
+    consumes:
+      elasticsearch: {from: elasticsearch_master}
+    properties:
+      elasticsearch:
+        node:
+          allow_data: true
+        config_options: *xpack-options
+      searchguard:
+        options: *searchguard_options
+- name: kibana
+  azs: ((kibana_azs))
+  instances: ((kibana_instances))
+  persistent_disk_type: ((kibana_persistent_disk_type))
+  vm_type: ((kibana_vm_type))
+  stemcell: default
+  networks:
+  - name: ((kibana_network))
+  jobs:
+  - name: bpm
+    release: bpm
+  - name: elasticsearch
+    release: logsearch
+    consumes:
+      elasticsearch: {from: elasticsearch_master}
+    properties:
+      elasticsearch:
+        config_options: *xpack-options
+      searchguard:
+        options: *searchguard_options
   - name: kibana
-    azs: ((kibana_azs))
-    instances: ((kibana_instances))
-    persistent_disk_type: ((kibana_persistent_disk_type))
-    vm_type: ((kibana_vm_type))
-    stemcell: default
-    networks:
-      - name: ((kibana_network))
-    jobs:
-      - name: bpm
-        release: bpm
-      - name: elasticsearch
-        release: logsearch
-        consumes:
-          elasticsearch: {from: elasticsearch_master}
-        properties:
-          elasticsearch:
-            config_options: *xpack-options
-      - name: kibana
-        release: logsearch
-        provides:
-          kibana: {as: kibana_link}
-        consumes:
-          elasticsearch: {from: elasticsearch_master}
-        properties:
-          kibana:
-            health:
-              timeout: 500
-            env:
-              - NODE_ENV: production
-            config_options: *xpack-options
+    release: logsearch
+    provides:
+      kibana: {as: kibana_link}
+    consumes:
+      elasticsearch: {from: elasticsearch_master}
+    properties:
+      kibana:
+        health:
+          timeout: 500
+        env:
+          - NODE_ENV: production
+        config_options: *xpack-options
+      searchguard:
+        options: *searchguard_options
 
-  - name: ingestor
-    azs: ((ingestor_azs))
-    instances: ((ingestor_instances))
-    persistent_disk_type: ((ingestor_persistent_disk_type))
-    vm_type: ((ingestor_vm_type))
-    stemcell: default
-    networks:
-      - name: ((ingestor_network))
-    jobs:
-      - name: bpm
-        release: bpm
-      - name: elasticsearch
-        release: logsearch
-        consumes:
-          elasticsearch: {from: elasticsearch_master}
-        properties:
-          elasticsearch:
-            config_options: *xpack-options
-      - name: ingestor_syslog
-        release: logsearch
-        consumes:
-          elasticsearch: nil
-        provides:
-          ingestor: {as: ingestor_link}
-          ingestor_inputs: nil
-        properties:
-          logstash_parser:
-            elasticsearch:
-              data_hosts:
-                - 127.0.0.1
-            deployment_dictionary:
-              - /var/vcap/packages/logsearch-config/deployment_lookup.yml
+- name: ingestor
+  azs: ((ingestor_azs))
+  instances: ((ingestor_instances))
+  persistent_disk_type: ((ingestor_persistent_disk_type))
+  vm_type: ((ingestor_vm_type))
+  stemcell: default
+  networks:
+  - name: ((ingestor_network))
+  jobs:
+  - name: bpm
+    release: bpm
+  - name: elasticsearch
+    release: logsearch
+    consumes:
+      elasticsearch: {from: elasticsearch_master}
+    properties:
+      elasticsearch:
+        config_options: *xpack-options
+      searchguard:
+        options: *searchguard_options
+  - name: ingestor_syslog
+    release: logsearch
+    consumes:
+      elasticsearch: nil
+    provides:
+      ingestor: {as: ingestor_link}
+      ingestor_inputs: nil
+    properties:
+      logstash_parser:
+        elasticsearch:
+          data_hosts:
+          - 127.0.0.1
+        deployment_dictionary:
+          - /var/vcap/packages/logsearch-config/deployment_lookup.yml
 
 releases:
-  - name: logsearch
-    # url: https://s3.amazonaws.com/logsearch/logsearch-211.1.0.tgz
-    url: https://nextcloud.paas-ta.org/index.php/s/Ym7ewqW4drfyxeS/download
-    version: 211.1.1
-    # sha1: fa1cd0dc846b163ea619cc0149c2379daee06025
-    sha1: ea58e4e826b42fa05ba29f6cb06ee54d0e71213d
+- name: logsearch
+  url: https://nextcloud.paas-ta.org/index.php/s/pwrJCknyMYXRNF5/download
+  version: 211.1.1
+  sha1: 436a4445f10646b40671791875bf08d5dffba26f
 
-  - name: bpm
-    url: https://bosh.io/d/github.com/cloudfoundry/bpm-release?v=1.1.6
-    version: 1.1.6
-    sha1: 5bad6161dbbcf068830a100b6a76056fe3b99bc8
+- name: bpm
+  url: https://bosh.io/d/github.com/cloudfoundry/bpm-release?v=1.1.6
+  version: 1.1.6
+  sha1: 5bad6161dbbcf068830a100b6a76056fe3b99bc8
 
 stemcells:
-  - alias: default
-    os: ubuntu-xenial
-    version: "latest"
+- alias: default
+  os: ubuntu-xenial
+  version: "latest"
 
 variables: []
+

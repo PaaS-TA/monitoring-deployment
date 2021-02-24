@@ -36,7 +36,7 @@ elasticsearch_data_network: "default"		# Elasticsearch-Data 네트워크
 elasticsearch_data_persistent_disk_type: "30GB"	# Elasticsearch-Data 영구 Disk 종류
 
 # KIBANA
-kibana_azs: ["z1"]				# Kibana 가용 존
+kibana_azs: ["z3"]				# Kibana 가용 존
 kibana_instances: 1				# Kibana 인스턴스 수
 kibana_vm_type: "medium"			# Kibana VM 종류
 kibana_network: "default"			# Kibana 네트워크
