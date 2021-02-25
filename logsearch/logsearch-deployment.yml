@@ -361,6 +361,9 @@ instance_groups:
           - 127.0.0.1
         deployment_dictionary:
           - /var/vcap/packages/logsearch-config/deployment_lookup.yml
+      searchguard:
+        options: *searchguard_options
+
 
 releases:
 - name: logsearch
