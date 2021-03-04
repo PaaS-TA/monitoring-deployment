@@ -19,6 +19,8 @@ instance_groups:
     serial: true
   networks:
   - name: ((elasticsearch_master_network))
+    static_ips:
+      - ((elasticsearch_master_ip))
   jobs:
   - name: bpm
     release: bpm

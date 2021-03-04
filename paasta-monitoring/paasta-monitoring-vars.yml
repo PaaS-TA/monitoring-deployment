@@ -21,6 +21,9 @@ influxdb_username: "admin"	        # Influxdb Admin 계정 Username
 influxdb_password: "PaaS-TA2020"	# Influxdb Admin 계정 Password
 influxdb_interval: "30d"                # Influxdb Retention Policy (bootstrapper)
 influxdb_https_enabled: "true"		# Influxdb HTTPS 설정
+elasticsearch_username: "admin"         # Elasticsearch admin 계정 Username
+elasticsearch_password: "logsearch"     # Elasticsearch admin 계정 Password
+elasticsearch_https_enabled: "true"     # Elasticsearch HTTPS 설정
 utc_time_gap: "9"			# UTC Time Zone과 Client Time Zone과의 시간 차이
 public_network_name: "vip"		# Monitoring-WEB Public Network Name
 system_type: "PaaS,CaaS,SaaS"		# 모니터링할 환경 선택

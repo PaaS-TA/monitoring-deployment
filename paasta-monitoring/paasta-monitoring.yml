@@ -251,6 +251,11 @@ instance_groups:
               password: ((influxdb_password))
               url: ((metric_url)):8086
               https_enabled: ((influxdb_https_enabled))
+            elasticsearch:
+              username: ((elasticsearch_username))
+              password: ((elasticsearch_password))
+              url: ((elasticsearch_master_ip)):((elasticsearch_master_port))
+              https_enabled: ((elasticsearch_https_enabled))
             paasta:
               system_domain: ((system_domain))
             bosh:
