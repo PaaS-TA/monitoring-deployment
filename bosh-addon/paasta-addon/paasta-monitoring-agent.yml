@@ -3,7 +3,7 @@
   value:
     name: paasta-monitoring-agent
     version: 5.5
-    url: https://nextcloud.paas-ta.org/index.php/s/FbKBPjmwaca5opH/download
+    url: https://nextcloud.paas-ta.org/index.php/s/f2kXDpoDzHLkbZm/download
     sha1: ab7997b387cd4e55194fe6b2e0be5590ea3c0ed5
 
 - type: replace
