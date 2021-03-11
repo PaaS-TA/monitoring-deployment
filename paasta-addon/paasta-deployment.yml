@@ -2547,7 +2547,7 @@ releases:
   version: 2.8.0
   sha1: 3a9732bab2fa80bb9431941193b6569ef29af491
 - name: diego
-  url: https://nextcloud.paas-ta.org/index.php/s/2qcLNwQfXCXxcAJ/download
+  url: https://nextcloud.paas-ta.org/index.php/s/etRxXa2F5rGsH3N/download
   version: 2.48.0
   sha1: 71dc528de5ef6af95642fb81344a669efa8c24a2
 - name: dotnet-core-buildpack
