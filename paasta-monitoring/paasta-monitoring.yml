@@ -277,7 +277,7 @@ instance_groups:
             pinpointWas:
               url: ((pinpoint_was_ip)):8080
             caasbroker:
-              url: ((cassbroker_ip)):3334
+              url: ((cassbroker_ip)):30334
             system:
               type: ((system_type))
 
