@@ -369,7 +369,7 @@ instance_groups:
 
 releases:
 - name: logsearch
-  url: https://nextcloud.paas-ta.org/index.php/s/e2EJKdRmaLPqf6W/download
+  url: https://nextcloud.paas-ta.org/index.php/s/nbtaqzg65zTBqzp/download
   version: 211.1.1
   sha1: e482218d92b9be803adb6263a8986a50db2808f6
 
