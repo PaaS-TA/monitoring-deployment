@@ -69,7 +69,7 @@
   value:
     name: diego
     sha1: 311838d9c613a09872a59def2c3731c2aa1c6fcb
-    url: https://nextcloud.paas-ta.org/index.php/s/AHPjx4KrMSqdj67/download
+    url: https://nextcloud.paas-ta.org/index.php/s/KqJowtN43TEbJ7Z/download
     version: 2.48.0-PaaS-TA
 
 - type: replace
