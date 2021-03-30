@@ -126,6 +126,7 @@ instance_groups:
           monitoring-batch:
             influxdb:
               url: ((metric_url)):8086
+              https_enabled: ((influxdb_https_enabled))
             db:
               ip: ((mariadb_ip))
               port: ((mariadb_port))
