@@ -14,9 +14,9 @@ stemcells:
 
 releases:
   - name: paasta-pinpoint-monitoring-release
-    url: https://nextcloud.paas-ta.org/index.php/s/CLPZ5CgCbGoW66d/download
+    url: https://nextcloud.paas-ta.org/index.php/s/nqJ55LbsGjKqAcy/download
     version: 1.1
-    sha1: 2428d02f33d820fdf068d90e68a3e0d79847b9a0
+    sha1: 08f5f1221dcc0429939e241160ba676f2d2f975c
 
 instance_groups:
   - name: h_master                    	#작업 이름(필수)
