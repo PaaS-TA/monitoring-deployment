@@ -16,7 +16,7 @@ releases:
   - name: paasta-monitoring-release
     sha1: 5acf201708c8992a00763daaed0a7b71e8375f2e
     version: "5.5" 
-    url: https://nextcloud.paas-ta.org/index.php/s/87zJiEK5spABCQR/download
+    url: https://nextcloud.paas-ta.org/index.php/s/wEtasZmnKM7yNW6/download
   - name: bpm
     url: https://bosh.io/d/github.com/cloudfoundry/bpm-release?v=1.1.9
     version: 1.1.9
