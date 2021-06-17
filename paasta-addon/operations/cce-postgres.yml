@@ -25,6 +25,13 @@
     properties:
       cce_enable: true
 
+# CCE - PaaS-TA postgres set password
+- type: replace
+  path: /variables/- 
+  value:
+    name: cf_postgres_admin_password
+    type: password
+
 # CCE - PaaS-TA database patch 
 - type: replace
   path: /instance_groups/name=database/jobs/-
@@ -33,6 +40,7 @@
     release: paasta-conf
     properties:
       cce_enable: true
+      postgres_admin_password: ((cf_postgres_admin_password))
 
 # CCE - Release replace
 - type: replace
@@ -47,9 +55,9 @@
   path: /releases/name=cf-networking
   value:
     name: cf-networking
-    sha1: 4981b6f9d0d5f87a22e1852b8bf239cd6701d6b4
-    url: https://nextcloud.paas-ta.org/index.php/s/DewM5n2ACrzwBrH/download
-    version: 2.33.0-PaaS-TA
+    sha1: 295e06c12fd50fd0e8ce0660d69f69dc0e2055ce
+    url: https://nextcloud.paas-ta.org/index.php/s/wiaoydDMnJSB54c/download
+    version: 2.33.0-PaaS-TA-v2
 
 - type: replace
   path: /releases/name=diego
@@ -63,17 +71,17 @@
   path: /releases/name=routing
   value:
     name: routing
-    sha1: 11b201117f131b2ac63d7fea957b13f40bcc82d3
-    url: https://nextcloud.paas-ta.org/index.php/s/Ce2oKEESn7ty5ro/download
-    version: 0.207.0-PaaS-TA
+    sha1: f7ebc51e22084df6a7ead33890ce99f5852964da
+    url: https://nextcloud.paas-ta.org/index.php/s/mFtAbxsexfqzr45/download
+    version: 0.207.0-PaaS-TA-v2
 
 - type: replace
   path: /releases/name=silk
   value:
     name: silk
-    sha1: 09399d2591045e1b266b28bd41ba41e1d9ec6985
-    url: https://nextcloud.paas-ta.org/index.php/s/Xi96J9mCsGyzx94/download
-    version: 2.33.0-PaaS-TA
+    sha1: 5b72dbc01b61d0cd0eda10d82000f82e35bedc42
+    url: https://nextcloud.paas-ta.org/index.php/s/WeHJfsHn7LSsKra/download
+    version: 2.33.0-PaaS-TA-v2
 
 - type: replace
   path: /releases/name=uaa
@@ -82,11 +90,3 @@
     sha1: 4432cf7d0c67fbb4a7bce2194b8b4b86221d57dc
     url: https://nextcloud.paas-ta.org/index.php/s/rnZ7WXWFdMTmpbH/download
     version: 74.29.0-PaaS-TA
-
-- type: replace
-  path: /releases/name=pxc
-  value:
-    name: pxc
-    sha1: ed99301e412319e2f62e4899c37f67293bddee96
-    url: https://nextcloud.paas-ta.org/index.php/s/nFc58sK45M6B8Pz/download
-    version: 0.29.0-PaaS-TA
