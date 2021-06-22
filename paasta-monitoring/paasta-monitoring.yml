@@ -273,7 +273,7 @@ instance_groups:
             prometheus:
               url: ((prometheus_ip)):30090
             kubernetes:
-              url: ((kubernetes_ip)):8443
+              url: ((kubernetes_ip)):6443
               token: ((kubernetes_token))
             pinpoint:
               url: ((saas_monitoring_url)):8079
