@@ -4,7 +4,7 @@ BOSH_ENVIRONMENT="${BOSH_ENVIRONMENT}"                  # bosh director alias na
 
 bosh -e ${BOSH_ENVIRONMENT} -d paasta -n deploy paasta-deployment.yml \
         -o operations/openstack.yml \
-        -o operations/cce.yml \
+        -o operations/cce-postgres.yml \
         -o operations/use-haproxy.yml \
         -o operations/use-haproxy-public-network.yml \
         -o operations/use-postgres.yml \
