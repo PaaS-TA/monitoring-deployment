@@ -63,9 +63,9 @@
   path: /releases/name=diego
   value:
     name: diego
-    sha1: 329ab10d3b8792de4697c2a7076caade0fd4b39d
-    url: https://nextcloud.paas-ta.org/index.php/s/WLQxEydt93pNxjs/download
-    version: 2.48.0-PaaS-TA
+    sha1: 71dc528de5ef6af95642fb81344a669efa8c24a2
+    url: https://nextcloud.paas-ta.org/index.php/s/yLMpzfxSJrBWcGf/download
+    version: 2.48.0
 
 - type: replace
   path: /releases/name=routing
