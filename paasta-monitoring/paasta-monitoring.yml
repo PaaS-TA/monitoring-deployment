@@ -14,12 +14,12 @@ stemcells:
 
 releases:
   - name: paasta-monitoring-release
-    sha1: 945198976d98bcba0dce723fc947b5f75588e48d
-    version: "5.5" 
-    url: https://nextcloud.paas-ta.org/index.php/s/6ZeKi5z25SNjHpc/download
+    version: "5.5"
+    url: https://nextcloud.paas-ta.org/index.php/s/txp3nE39e5isdbB/download
+    sha1: 92e987e839350624601796ada295a6999794bc09
   - name: bpm
-    url: https://bosh.io/d/github.com/cloudfoundry/bpm-release?v=1.1.9
     version: 1.1.9
+    url: https://bosh.io/d/github.com/cloudfoundry/bpm-release?v=1.1.9
     sha1: dcf0582d838a73de29da273552ae79ac3098ee8b
   - name: redis
     version: '15.3.5'
@@ -108,7 +108,8 @@ instance_groups:
           mariadb:
             port: ((mariadb_port))
             admin_user:
-              password: '((mariadb_password))'
+              username: ((mariadb_username))
+              password: ((mariadb_password))
 
   - name: monitoring-batch
     azs: ((monitoring_batch_azs))
