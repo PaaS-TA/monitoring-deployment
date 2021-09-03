@@ -35,7 +35,7 @@ kubernetes_token: "eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3Nl
 
 # STEMCELL
 stemcell_os: "ubuntu-xenial"		# Stemcell OS
-stemcell_version: "621.125"		# Stemcell Version
+stemcell_version: "621.94"		# Stemcell Version
 
 
 # REDIS
