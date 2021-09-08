@@ -1,0 +1,21 @@
+- path: /releases/-
+  release: zabbix-agent
+  type: replace
+  value:
+    name: zabbix-agent
+    sha1: 5cf181ae2fafcbb2a2a189b4138c6d8871dcd755
+    url: https://nextcloud.paas-ta.org/index.php/s/ymamn5BFKpASFBC/download
+    version: 5.0.14
+- path: /instance_groups/name=bosh/jobs/-
+  type: replace
+  value:
+    name: zabbix-agent
+    properties:
+      zabbix-agent:
+        server: ((server_ip))
+        listen_port: ((listen_port))
+        server_active: ((server_active))
+        host_metadata: ((host_metadata))
+    release: zabbix-agent
+
+
