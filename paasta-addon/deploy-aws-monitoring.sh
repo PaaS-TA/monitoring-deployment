@@ -4,7 +4,6 @@ BOSH_ENVIRONMENT="${BOSH_ENVIRONMENT}"			 # bosh director alias name (PaaS-TA에
 
 bosh -e ${BOSH_ENVIRONMENT} -d paasta -n deploy paasta-deployment.yml \
 	-o operations/aws.yml \
-	-o operations/cce.yml \
 	-o operations/use-haproxy.yml \
 	-o operations/use-haproxy-public-network.yml \
 	-o operations/use-postgres.yml \
@@ -12,5 +11,6 @@ bosh -e ${BOSH_ENVIRONMENT} -d paasta -n deploy paasta-deployment.yml \
 	-o operations/addons/paasta-monitoring-agent.yml \
   	-o operations/addons/enable-component-syslog.yml \
 	-o operations/addons/enable-zabbix-agent.yml \
+	-o operations/cce-postgres.yml \
 	-l vars.yml \
 	-l ../../common/common_vars.yml
