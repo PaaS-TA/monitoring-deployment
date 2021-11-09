@@ -16,7 +16,7 @@ releases:
   - name: monitoring-dashboard-release
     sha1: 8ebef07288cdcb445bf5fb8d82dceda11da7b814
     version: "5.6.0" 
-    url: https://nextcloud.paas-ta.org/index.php/s/sKx7PSbq7RdAiFn/download
+    url: https://nextcloud.paas-ta.org/index.php/s/BMttsNA8J3zaDCo/download
   - name: bpm
     url: https://bosh.io/d/github.com/cloudfoundry/bpm-release?v=1.1.9
     version: 1.1.9
