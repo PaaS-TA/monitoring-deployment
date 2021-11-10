@@ -195,11 +195,11 @@ instance_groups:
               uaaurl: https://uaa.((system_domain))
               username: ((paasta_admin_username))
               password: ((paasta_admin_password))
-			zabbix:
-			  host: ((zabbix_host))
-			  admin:
-			    id: ((zabbix_admin_id))
-				  pw: ((zabbix_admin_pw))
+            zabbix:
+              host: ((zabbix_host))
+              admin:
+                id: ((zabbix_admin_id))
+                pw: ((zabbix_admin_pw))
 
   - name: caas-monitoring-batch
     azs: ((caas_monitoring_batch_azs))
