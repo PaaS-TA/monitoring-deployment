@@ -162,6 +162,45 @@ instance_groups:
               username: ((paasta_admin_username))
               password: ((paasta_admin_password))
 
+  - name: iaas-monitoring-batch
+    azs: ((iaas_monitoring_batch_azs))
+    instances: ((iaas_monitoring_batch_instances))
+    vm_type: ((iaas_monitoring_batch_vm_type))
+    stemcell: default
+    networks:
+      - name: ((iaas_monitoring_batch_network))
+    jobs:
+      - name: iaas-monitoring-batch
+        release: paasta-monitoring-release
+        properties:
+          iaas-monitoring-batch:
+            db:
+              ip: ((mariadb_ip))
+              port: ((mariadb_port))
+              username: ((mariadb_username))
+              password: ((mariadb_password))
+            mail:
+              smtp:
+                url: ((smtp_url))
+                port: ((smtp_port))
+              sender:
+                name: ((mail_sender))
+                password: ((mail_password))
+              resource:
+                url: ((resource_url))
+              send: ((mail_enable))
+              tls: ((mail_tls_enable))
+            paasta:
+              apiurl: http://api.((system_domain))
+              uaaurl: https://uaa.((system_domain))
+              username: ((paasta_admin_username))
+              password: ((paasta_admin_password))
+			zabbix:
+			  host: ((zabbix_host))
+			  admin:
+			    id: ((zabbix_admin_id))
+				  pw: ((zabbix_admin_pw))
+
   - name: caas-monitoring-batch
     azs: ((caas_monitoring_batch_azs))
     instances: ((monitoring_batch_instances))
@@ -283,7 +322,11 @@ instance_groups:
               url: ((cassbroker_ip)):30334
             system:
               type: ((system_type))
-
+            zabbix:
+              host: ((zabbix_host))
+              admin:
+                id: ((zabbix_admin_id))
+                pw: ((zabbix_admin_pw))
 variables:
   - name: redis_password
     type: password
