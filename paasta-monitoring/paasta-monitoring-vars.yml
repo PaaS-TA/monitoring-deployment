@@ -75,6 +75,12 @@ monitoring_batch_instances: 1		# Monitoring-Batch 인스턴스 수
 monitoring_batch_vm_type: "small"	# Monitoring-Batch VM 종류
 monitoring_batch_network: "default"	# Monitoring-Batch 네트워크
 
+# IAAS-MONITORING-BATCH
+iaas_monitoring_batch_azs: ["z1"]            # IAAS-Monitoring-Batch 가용 존
+iaas_monitoring_batch_instances: 1           # IAAS-Monitoring-Batch 인스턴스 수
+iaas_monitoring_batch_vm_type: "small"       # IAAS-Monitoring-Batch VM 종류
+iaas_monitoring_batch_network: "default"     # IAAS-Monitoring-Batch 네트워크
+
 # CAAS-MONITORING-BATCH
 caas_monitoring_batch_azs: ["z1"]	# CAAS-Monitoring-Batch 가용 존
 caas_monitoring_batch_instances: 1	# CAAS-Monitoring-Batch 인스턴스 수
