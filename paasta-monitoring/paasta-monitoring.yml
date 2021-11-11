@@ -14,9 +14,9 @@ stemcells:
 
 releases:
   - name: paasta-monitoring-release
-    sha1: 987f6f666e4640da81932f4041db0781fe178e63
+    sha1: 9842fd3443d2ef064543693e9109673baefa0722
     version: "5.6.0" 
-    url: https://nextcloud.paas-ta.org/index.php/s/qb34CdPjdbTGDoD/download
+    url: https://nextcloud.paas-ta.org/index.php/s/r54Hk3ibjaas6Kz/download
   - name: bpm
     url: https://bosh.io/d/github.com/cloudfoundry/bpm-release?v=1.1.9
     version: 1.1.9
