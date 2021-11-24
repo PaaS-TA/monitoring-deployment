@@ -3,7 +3,7 @@
   value:
     include:
       stemcell:
-      - os: ubuntu-xenial
+      - os: ubuntu-bionic
     jobs:
     - name: zabbix-agent
       properties:
