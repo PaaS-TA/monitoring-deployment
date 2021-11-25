@@ -4,10 +4,12 @@
 inception_os_user_name: "ubuntu"
 ### On-Demand Bosh Deployment Name Setting ###
 deployment_name: "pinpoint-monitoring"		# On-Demand Deployment Name
+
 #### Main Stemcells Setting ###
-stemcell_os: "ubuntu-xenial"				# Deployment Main Stemcell OS
-stemcell_version: "621.125"				# Main Stemcell Version
+stemcell_os: "ubuntu-bionic"				# Deployment Main Stemcell OS
+stemcell_version: "1.36"				# Main Stemcell Version
 stemcell_alias: "default"   				# Main Stemcell Alias
+
 #### On-Demand Release Deployment Setting ###
 releases_name:  "paasta-pinpoint-monitoring-release"	# On-Demand Release Name
 public_networks_name: "vip"				# Pinpoint Public Network Name
