@@ -26,7 +26,7 @@ elasticsearch_password: "logsearch"     # Elasticsearch admin 계정 Password
 elasticsearch_https_enabled: "true"     # Elasticsearch HTTPS 설정
 utc_time_gap: "9"			# UTC Time Zone과 Client Time Zone과의 시간 차이
 public_network_name: "vip"		# Monitoring-WEB Public Network Name
-system_type: "PaaS,CaaS,SaaS"		# 모니터링할 환경 선택
+system_type: "PaaS,CaaS,SaaS,IaaS"		# 모니터링할 환경 선택
 prometheus_ip: "10.0.1.150"		# Kubernates의 prometheus-prometheus-prometheus-oper-prometheus-0 Pod의 Node IP
 kubernetes_ip: "10.0.1.151"		# Kubernates의 서비스 API IP
 pinpoint_was_ip: "10.0.1.152"		# Pinpoint HAProxy WEBUI Private IP
