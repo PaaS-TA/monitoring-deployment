@@ -3,8 +3,8 @@
   value:
     include:
       stemcell:
-      - os: ubuntu-trusty
       - os: ubuntu-xenial
+      - os: ubuntu-bionic
     jobs:
     - name: metrics_agent
       properties:
