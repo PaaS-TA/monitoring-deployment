@@ -1,0 +1,8 @@
+# CCE - Release replace (Custom Release for PaaS-TA Monitoring)
+- type: replace
+  path: /releases/name=diego
+  value:
+    name: diego
+    sha1: 16b2eb951a88ba87f6c03774277642fed7a0d2dc
+    url: https://nextcloud.paas-ta.org/index.php/s/y992KsW288RzB6o/download
+    version: 2.49.0-PaaS-TA-Monitoring
