@@ -73,7 +73,7 @@
   - 5\. [PaaS-TA CaaS Monitoring Prometheus 설치 가이드 (선택)](https://github.com/PaaS-TA/monitoring-guide/blob/master/install/PAAS-TA_MONITORING_CONTAINER_SERVICE_INSTALL.md)
   - 6\. [PaaS-TA IaaS Monitoring Zabbix Server 설치 가이드 (선택)](https://github.com/PaaS-TA/monitoring-guide/blob/master/install/PAAS-TA_MONITORING_ZABBIX-SERVER_INSTALL.md)
   - 7\. [PaaS-TA IaaS Monitoring Zabbix Proxy 설치 가이드 (선택)](https://github.com/PaaS-TA/monitoring-guide/blob/master/install/PAAS-TA_MONITORING_ZABBIX-PROXY_INSTALL.md)
-  - 8\. [PaaS-TA Monitoring Dashboard 설치 가이드](https://github.com/PaaS-TA/monitoring-guide/blob/master/install/PAAS-TA_MONITORING_INSTALL_GUIDE.md)
+  - 8\. [PaaS-TA Monitoring Dashboard 설치 가이드](https://github.com/PaaS-TA/monitoring-guide/blob/master/install/PAAS-TA_MONITORING_PAAS-TA_MONITORING_INSTALL.md)
 
 ## Contributors ✨
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
