@@ -71,8 +71,8 @@
   - 3\. [PaaS-TA PaaS Monitoring Logsearch 설치 가이드 (선택)](https://github.com/PaaS-TA/Guide/blob/v5.5.0/service-guide/monitoring/PAAS-TA_MONITORING_LOGSEARCH_INSTALL.md)
   - 4\. [PaaS-TA SaaS Monitoring Pinpoint 설치 가이드 (선택)](https://github.com/PaaS-TA/monitoring-guide/blob/master/install/PAAS-TA_MONITORING_PINPOINT_MONITORING_INSTALL.md)
   - 5\. [PaaS-TA CaaS Monitoring Prometheus 설치 가이드 (선택)](https://github.com/PaaS-TA/monitoring-guide/blob/master/install/PAAS-TA_MONITORING_CONTAINER_SERVICE_INSTALL.md)
-  - 6\. [PaaS-TA IaaS Monitoring Zabbix Server 설치 가이드 (선택)] (https://github.com/PaaS-TA/monitoring-guide/blob/master/install/PAAS-TA_MONITORING_ZABBIX-SERVER_INSTALL.md)
-  - 7\. [PaaS-TA IaaS Monitoring Zabbix Proxy 설치 가이드 (선택)] (https://github.com/PaaS-TA/monitoring-guide/blob/master/install/PAAS-TA_MONITORING_ZABBIX-PROXY_INSTALL.md)
+  - 6\. [PaaS-TA IaaS Monitoring Zabbix Server 설치 가이드 (선택)](https://github.com/PaaS-TA/monitoring-guide/blob/master/install/PAAS-TA_MONITORING_ZABBIX-SERVER_INSTALL.md)
+  - 7\. [PaaS-TA IaaS Monitoring Zabbix Proxy 설치 가이드 (선택)](https://github.com/PaaS-TA/monitoring-guide/blob/master/install/PAAS-TA_MONITORING_ZABBIX-PROXY_INSTALL.md)
   - 8\. [PaaS-TA Monitoring Dashboard 설치 가이드](https://github.com/PaaS-TA/monitoring-guide/blob/master/install/PAAS-TA_MONITORING_INSTALL_GUIDE.md)
 
 ## Contributors ✨
