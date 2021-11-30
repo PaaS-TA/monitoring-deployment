@@ -64,7 +64,7 @@
 <i>🚩 You are here.</i>
 
 # Monitoring-Deployment
-- ### [PaaS-TA Monitoring Architecture](https://github.com/PaaS-TA/Guide/blob/v5.5.0/service-guide/monitoring/PAAS-TA_MONITORING_ARCHITECTURE.md)
+- ### [PaaS-TA Monitoring Architecture](https://github.com/PaaS-TA/Guide/blob/master/service-guide/monitoring/PAAS-TA_MONITORING_ARCHITECTURE.md)
 - ### PaaS-TA Monitoring 설치 순서<br>(Monitoring을 사용할 경우 BOSH와 PaaS-TA를 설치할 때 Monitoring에 관한 Option을 넣어줘야 한다)
   - 1\. [Bosh 설치 시 Monitoring option 적용 가이드](https://github.com/PaaS-TA/Guide/blob/v5.5.0/install-guide/bosh-monitoring/PAAS-TA_BOSH2_MONITORING_INSTALL_GUIDE.md)
   - 2\. [PaaS-TA core 설치 시 Monitoring option 적용 가이드](https://github.com/PaaS-TA/Guide/blob/v5.5.0/install-guide/paasta-monitoring/PAAS-TA_CORE_MONITORING_INSTALL_GUIDE.md)
