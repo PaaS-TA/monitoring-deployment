@@ -16,7 +16,7 @@
   </tr>
   <tr align=center>
     <td rowspan=2 colspan=2>🚩 <a href="https://github.com/PaaS-TA/monitoring-deployment">모니터링</a></td>
-    <td><a href="https://github.com/PaaS-TA/PaaS-TA-Monitoring-Release">Monitoring</a></td>
+    <td><a href="https://github.com/PaaS-TA/monitoring-dashboard-release">Monitoring</a></td>
     <td><a href="https://github.com/PaaS-TA/monitoring-logsearch-release">Logsearch</a></td>
     <td><a href="https://github.com/PaaS-TA/monitoring-influxdb-release">InfluxDB</a></td>
     <td><a href="https://github.com/PaaS-TA/monitoring-redis-release">Redis</a></td>
@@ -24,7 +24,7 @@
   <tr align=center>
     <td><a href="https://github.com/PaaS-TA/monitoring-pinpoint-release">Pinpoint</td>
     <td><a href="https://github.com/PaaS-TA/monitoring-pinpoint-buildpack">Pinpoint Buildpack</td>
-    <td></td>
+    <td><a href="https://github.com/PaaS-TA/monitoring-zabbix-release">Zabbix</a></td>
     <td></td>
   </tr>
   </tr>
@@ -66,13 +66,13 @@
 # Monitoring-Deployment
 - ### [PaaS-TA Monitoring Architecture](https://github.com/PaaS-TA/Guide/blob/master/service-guide/monitoring/PAAS-TA_MONITORING_ARCHITECTURE.md)
 - ### PaaS-TA Monitoring 설치 순서<br>(Monitoring을 사용할 경우 BOSH와 PaaS-TA를 설치할 때 Monitoring에 관한 Option을 넣어줘야 한다)
-  - 1\. [Monitoring 옵션을 포함한 BOSH 설치](https://github.com/PaaS-TA/Guide/blob/master/install-guide/bosh-monitoring/PAAS-TA_BOSH2_MONITORING_INSTALL_GUIDE.md)
-  - 2\. [Monitoring 옵션을 포함한 PaaS-TA 5.5.2 설치](https://github.com/PaaS-TA/Guide/blob/master/install-guide/paasta-monitoring/PAAS-TA_CORE_MONITORING_INSTALL_GUIDE.md)
-  - 3\. [PaaS-TA PaaS Monitoring Logsearch 설치(선택)](https://github.com/PaaS-TA/Guide/blob/master/service-guide/monitoring/PAAS-TA_MONITORING_LOGSEARCH_INSTALL.md)
-  - 4\. [PaaS-TA SaaS Monitoring Pinpoint release 설치(선택)](https://github.com/PaaS-TA/Guide/blob/master/service-guide/monitoring/PAAS-TA_MONITORING_PINPOINT_MONITORING_INSTALL.md)
-  - 5\. [PaaS-TA CaaS Monitoring Container Service 설치(선택)](https://github.com/PaaS-TA/Guide/blob/master/service-guide/monitoring/PAAS-TA_MONITORING_CONTAINER_SERVICE_INSTALL.md)
-  - 6\. [PaaS-TA IaaS Monitoring Monasca 설치(선택)](https://github.com/PaaS-TA/Guide/blob/master/service-guide/monitoring/PAAS-TA_MONITORING_MONASCA_INSTALL.md)
-  - 7\. [PaaS-TA Monitoring 설치](https://github.com/PaaS-TA/Guide/blob/master/service-guide/monitoring/PAAS-TA_MONITORING_PAAS-TA_MONITORING_INSTALL.md)
+  - 1\. [Bosh 설치 시 Monitoring option 적용 가이드](https://github.com/PaaS-TA/Guide/blob/v5.5.0/install-guide/bosh-monitoring/PAAS-TA_BOSH2_MONITORING_INSTALL_GUIDE.md)
+  - 2\. [PaaS-TA core 설치 시 Monitoring option 적용 가이드](https://github.com/PaaS-TA/Guide/blob/v5.5.0/install-guide/paasta-monitoring/PAAS-TA_CORE_MONITORING_INSTALL_GUIDE.md)
+  - 3\. [PaaS-TA PaaS Monitoring Logsearch 설치 가이드 (선택)](https://github.com/PaaS-TA/Guide/blob/v5.5.0/service-guide/monitoring/PAAS-TA_MONITORING_LOGSEARCH_INSTALL.md)
+  - 4\. [PaaS-TA SaaS Monitoring Pinpoint 설치 가이드 (선택)](https://github.com/PaaS-TA/Guide/blob/v5.5.0/service-guide/monitoring/PAAS-TA_MONITORING_PINPOINT_MONITORING_INSTALL.md)
+  - 5\. [PaaS-TA CaaS Monitoring Prometheus 설치 가이드 (선택)](https://github.com/PaaS-TA/Guide/blob/v5.5.0/service-guide/monitoring/PAAS-TA_MONITORING_CONTAINER_SERVICE_INSTALL.md)
+  - 6\. <strike>PaaS-TA IaaS Monitoring Zabbix 설치 가이드 (선택)</strike> (In Progress)
+  - 7\. [PaaS-TA Monitoring Dashboard 설치 가이드](https://github.com/PaaS-TA/Guide/blob/v5.5.0/service-guide/monitoring/PAAS-TA_MONITORING_PAAS-TA_MONITORING_INSTALL.md)
 
 ## Contributors ✨
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):

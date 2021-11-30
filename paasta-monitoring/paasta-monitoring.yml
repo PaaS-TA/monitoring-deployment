@@ -14,12 +14,12 @@ stemcells:
 
 releases:
   - name: paasta-monitoring-release
-    version: "5.5"
-    url: https://nextcloud.paas-ta.org/index.php/s/txp3nE39e5isdbB/download
-    sha1: 92e987e839350624601796ada295a6999794bc09
+    sha1: 47e9df197ad7e98cf017a2ad779aef46a605d1a7
+    version: "5.6.0" 
+    url: https://nextcloud.paas-ta.org/index.php/s/Yf9WwaK6GND7gjj/download
   - name: bpm
-    version: 1.1.9
     url: https://bosh.io/d/github.com/cloudfoundry/bpm-release?v=1.1.9
+    version: 1.1.9
     sha1: dcf0582d838a73de29da273552ae79ac3098ee8b
   - name: redis
     version: '15.3.5'
@@ -108,8 +108,7 @@ instance_groups:
           mariadb:
             port: ((mariadb_port))
             admin_user:
-              username: ((mariadb_username))
-              password: ((mariadb_password))
+              password: '((mariadb_password))'
 
   - name: monitoring-batch
     azs: ((monitoring_batch_azs))
@@ -162,6 +161,54 @@ instance_groups:
               uaaurl: https://uaa.((system_domain))
               username: ((paasta_admin_username))
               password: ((paasta_admin_password))
+
+  - name: iaas-monitoring-batch
+    azs: ((iaas_monitoring_batch_azs))
+    instances: ((iaas_monitoring_batch_instances))
+    vm_type: ((iaas_monitoring_batch_vm_type))
+    stemcell: default
+    networks:
+      - name: ((iaas_monitoring_batch_network))
+    jobs:
+      - name: iaas-monitoring-batch
+        release: paasta-monitoring-release
+        properties:
+          iaas-monitoring-batch:
+            db:
+              ip: ((mariadb_ip))
+              port: ((mariadb_port))
+              username: ((mariadb_username))
+              password: ((mariadb_password))
+            mail:
+              smtp:
+                url: ((smtp_url))
+                port: ((smtp_port))
+              sender:
+                name: ((mail_sender))
+                password: ((mail_password))
+              resource:
+                url: ((resource_url))
+              send: ((mail_enable))
+              tls: ((mail_tls_enable))
+            paasta:
+              apiurl: http://api.((system_domain))
+              uaaurl: https://uaa.((system_domain))
+              username: ((paasta_admin_username))
+              password: ((paasta_admin_password))
+            zabbix:
+              host: ((zabbix_host))
+              admin:
+                id: ((zabbix_admin_id))
+                pw: ((zabbix_admin_pw))
+            openstack:
+              region: ((openstack_region))
+              domain: ((openstack_domain))
+              username: ((openstack_username))
+              password: ((openstack_password))
+              tenant_name: ((openstack_tenant_name))
+              tenant_id: ((openstack_tenant_id))
+              endpoint: ((openstack_endpoint))
+              keystone_url: ((openstack_keystone_url))              
 
   - name: caas-monitoring-batch
     azs: ((caas_monitoring_batch_azs))
@@ -284,7 +331,21 @@ instance_groups:
               url: ((cassbroker_ip)):30334
             system:
               type: ((system_type))
-
+            zabbix:
+              host: ((zabbix_host))
+              admin:
+                id: ((zabbix_admin_id))
+                pw: ((zabbix_admin_pw))
+            openstack:
+              region: ((openstack_region))
+              domain: ((openstack_domain))
+              username: ((openstack_username))
+              password: ((openstack_password))
+              tenant_name: ((openstack_tenant_name))
+              tenant_id: ((openstack_tenant_id))
+              endpoint: ((openstack_endpoint))
+              keystone_url: ((openstack_keystone_url))
+                
 variables:
   - name: redis_password
     type: password

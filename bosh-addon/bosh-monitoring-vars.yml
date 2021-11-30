@@ -1,0 +1,5 @@
+#Zabbix agent
+server_ip: "127.0.0.1"
+listen_port: "10050"
+server_active: "10.0.240.10:10051"
+host_metadata: "zabbix"

@@ -4,12 +4,13 @@ BOSH_ENVIRONMENT="${BOSH_ENVIRONMENT}"                  # bosh director alias na
 
 bosh -e ${BOSH_ENVIRONMENT} -d paasta -n deploy paasta-deployment.yml \
         -o operations/openstack.yml \
-        -o operations/cce-postgres.yml \
         -o operations/use-haproxy.yml \
         -o operations/use-haproxy-public-network.yml \
         -o operations/use-postgres.yml \
-        -o operations/rename-network-and-deployment.yml \
+        -o operations/cce.yml \
+	-o operations/rename-network-and-deployment.yml \
         -o operations/addons/paasta-monitoring-agent.yml \
         -o operations/addons/enable-component-syslog.yml \
+	-o operations/addons/enable-zabbix-agent.yml \
         -l vars.yml \
         -l ../../common/common_vars.yml

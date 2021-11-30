@@ -10,5 +10,7 @@ bosh create-env bosh.yml \
 	-o jumpbox-user.yml \
 	-o openstack/disable-readable-vm-names.yml \
 	-o syslog.yml \
+	-o zabbix-agent.yml \
 	-o paasta-addon/paasta-monitoring-agent.yml \
-	-l openstack-vars.yml
+	-l openstack-vars.yml \
+        -l bosh-monitoring-vars.yml
