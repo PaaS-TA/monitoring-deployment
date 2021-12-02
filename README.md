@@ -63,7 +63,7 @@
 <i>🚩 You are here.</i>
 
 # Monitoring Deployment
-본 저장소에서는 PaaS-TA Monitoring 환경 설치를 위한 각종 설치 스크립트와 매니페스트 파일을 정의 및 보관하고 있으며 해당 저장소를 통해 배포를 지원하고 있는 범위는 다음과 같습니다.
+본 저장소에서는 PaaS-TA Monitoring 환경 설치를 위한 각종 설치 스크립트와 매니페스트 파일을 정의 및 보관하고 있으며 저장소의 각 디렉토리를 통해 배포를 지원하고 있는 범위는 다음과 같습니다.
 
 　📁 **bosh-addon** ▸ BOSH (모니터링 설치 옵션 적용) 배포 파일  
 　📁 **paasta-addon** ▸ PaaS-TA (모니터링 설치 옵션 적용) 배포 파일  
