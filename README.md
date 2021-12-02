@@ -1,5 +1,4 @@
 ## Related Repositories
-
 <table>
   <tr>
     <td colspan=2 align=center>플랫폼</td>
@@ -63,34 +62,15 @@
 </table>
 <i>🚩 You are here.</i>
 
-# PaaS-TA Monitoring Install Guide
+# Monitoring Deployment
+본 저장소에서는 **PaaS-TA Monitoring Dashboard** 설치를 위한 각종 설치 스크립트와 매니페스트 파일을 정의 및 보관하고 있으며 현재 해당 저장소를 통해 배포를 지원하고 있는 범위는 다음과 같다.
 
+- <b>BOSH(+Monitoring Dashboard)</b>의 배포를 위한 옵션 적용 파일
+- <b>PaaS-TA(+Monitoring Dashboard)</b>의 배포 위한 옵션 적용 파일
+- <b>Logsearch</b>의 배포
+- <b>Pinpoint Monitoring</b>의 배포
 
-### │ PaaS-TA Monitoring Install Process
-
-
-#### ⛤ ─ *Essential Installation.*  
-- 아래에 나열된 순서대로 설치를 권장한다.
-
-　 [[IaaS] Infrastructure Monitoring - Zabbix 설치](#) : IaaS 모니터링을 이용할 경우에만 설치  
- 　　▸ [Zabbix Server 설치](https://github.com/PaaS-TA/monitoring-guide/blob/master/install/PAAS-TA_MONITORING_ZABBIX-SERVER_INSTALL.md)  
- 　　▸ [Zabbix Proxy 설치](https://github.com/PaaS-TA/monitoring-guide/blob/master/install/PAAS-TA_MONITORING_ZABBIX-PROXY_INSTALL.md)  
- 　　▸ [Zabbix Agent 설치](https://github.com/PaaS-TA/monitoring-guide/blob/master/install/PAAS-TA_MONITORING_ZABBIX-AGENT_INSTALL.md)  
-   1. [BOSH (+Monitoring Dashboard) 설치](https://github.com/PaaS-TA/monitoring-guide/blob/master/install/PAAS-TA_BOSH2_MONITORING_INSTALL_GUIDE.md) ⛤   
-   2. [PaaS-TA (+Monitoring Dashboard) 설치](https://github.com/PaaS-TA/monitoring-guide/blob/master/install/PAAS-TA_CORE_MONITORING_INSTALL_GUIDE.md) ⛤   
-   3. [**Monitoring Dashboard** 설치](https://github.com/PaaS-TA/monitoring-guide/blob/master/install/PAAS-TA_MONITORING_PAAS-TA_MONITORING_INSTALL.md) ⛤ 
-   4. [[PaaS] Log Monitoring - Logsearch 설치](https://github.com/PaaS-TA/monitoring-guide/blob/master/install/PAAS-TA_MONITORING_LOGSEARCH_INSTALL.md)  
-   5. [[SaaS] Application Monitoring - Pinpoint Monitoring 설치](https://github.com/PaaS-TA/monitoring-guide/blob/master/install/PAAS-TA_MONITORING_PINPOINT_MONITORING_INSTALL.md)  
-   6. [[CaaS] Container Monitoring - Prometheus 설치](https://github.com/PaaS-TA/monitoring-guide/blob/master/install/PAAS-TA_MONITORING_CONTAINER_SERVICE_INSTALL.md)  
-
-- Zabbix 설치는 IaaS 모니터링 기능을 활성화할 경우 반드시 설치되어야 하며, 가장 먼저 설치하는 것을 권장하고 있다.
-- Zabbix Agent는 배포과정에서 자동으로 설치되므로 [Zabbix Agent 설치](https://github.com/PaaS-TA/monitoring-guide/blob/master/install/PAAS-TA_MONITORING_ZABBIX-AGENT_INSTALL.md)  메뉴얼은 수동 설치시에만 참고한다.
-
-<table>
-  <tr>
-    <td>⚠️ <b>PaaS-TA 플랫폼</b>에서 모니터링 기능(대시보드)을 사용할 경우, 반드시 <b>BOSH</b>와 <b>PaaS-TA</b> 배포 시에 모니터링에 필요한 옵션을 사용한 배포 작업이 필수 선행되어야 한다(#1, #2 설치 가이드 참고).</td>
-  </tr>
-</table>
+모니터링 서비스별 아키텍처 문서 및 상세한 배포 가이드 정보는 <b>[📑여기](https://github.com/PaaS-TA/Guide/tree/working-new-template)</b>에서 확인할 수 있다.
 
 ## Contributors ✨
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
@@ -100,14 +80,14 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://github.com/hsohans"><img src="https://avatars.githubusercontent.com/u/51317201?v=4" width="100px;" alt=""/><br /><sub><b>hso</b></sub></a><br /><a href="#" title="Code">💻</a> <a href="#" title="Reviewed Pull Requests">👀</a></td>
-    <td align="center"><a href="https://github.com/RomulusKim"><img src="https://avatars.githubusercontent.com/u/73581918?v=4" width="100px;" alt=""/><br /><sub><b>Romulus Kim</b></sub></a><br /><a href="#" title="Code">💻</a> <a href="#" title="Reviewed Pull Requests">👀</a></td>
     <td align="center"><a href="https://github.com/thouy"><img src="https://avatars.githubusercontent.com/u/32118423?v=4" width="100px;" alt=""/><br /><sub><b>Minsoo, Kim</b></sub></a><br /><a href="#" title="Code">💻</a> <a href="#" title="Reviewed Pull Requests">👀</a></td>
-    <td align="center"><a href="https://github.com/thansrb"><img src="https://avatars.githubusercontent.com/u/31251109?v=4" width="100px;" alt=""/><br /><sub><b>thansrb</b></sub></a><br /><a href="#" title="Code">💻</a> <a href="#" title="Reviewed Pull Requests">👀</a></td>
-    <td align="center"><a href="https://github.com/okpc579"><img src="https://avatars.githubusercontent.com/u/55691511?v=4" width="100px;" alt=""/><br /><sub><b>Ruby</b></sub></a><br /><a href="#" title="Code">💻</a> <a href="#" title="Reviewed Pull Requests">👀</a></td>
+    <td align="center"><a href="https://github.com/YoongJwe"><img src="https://avatars.githubusercontent.com/u/78844504?v=4" width="100px;" alt=""/><br /><sub><b>YoongJwe</b></sub></a><br /><a href="#" title="Code">💻</a> <a href="#" title="Reviewed Pull Requests">👀</a></td>
     <td align="center"><a href="https://github.com/taking"><img src="https://avatars.githubusercontent.com/u/9063986?v=4" width="100px;" alt=""/><br /><sub><b>taking</b></sub></a><br /><a href="#" title="Code">💻</a> <a href="#" title="Reviewed Pull Requests">👀</a></td>
+    <td align="center"><a href="https://github.com/okpc579"><img src="https://avatars.githubusercontent.com/u/55691511?v=4" width="100px;" alt=""/><br /><sub><b>Ruby</b></sub></a><br /><a href="#" title="Code">💻</a> <a href="#" title="Reviewed Pull Requests">👀</a></td>
+    <td align="center"><a href="https://github.com/thansrb"><img src="https://avatars.githubusercontent.com/u/31251109?v=4" width="100px;" alt=""/><br /><sub><b>thansrb</b></sub></a><br /><a href="#" title="Code">💻</a> <a href="#" title="Reviewed Pull Requests">👀</a></td>
     <td align="center"><a href="https://github.com/jhuhm135"><img src="https://avatars.githubusercontent.com/u/70005316?v=4" width="100px;" alt=""/><br /><sub><b>jhuhm135</b></sub></a><br /><a href="#" title="Code">💻</a> <a href="#" title="Reviewed Pull Requests">👀</a></td>
   </tr>
   <tr>
-    <td align="center"><a href="https://github.com/YoongJwe"><img src="https://avatars.githubusercontent.com/u/78844504?v=4" width="100px;" alt=""/><br /><sub><b>YoongJwe</b></sub></a><br /><a href="#" title="Code">💻</a> <a href="#" title="Reviewed Pull Requests">👀</a></td>
+    <td align="center"><a href="https://github.com/RomulusKim"><img src="https://avatars.githubusercontent.com/u/73581918?v=4" width="100px;" alt=""/><br /><sub><b>Romulus Kim</b></sub></a><br /><a href="#" title="Code">💻</a> <a href="#" title="Reviewed Pull Requests">👀</a></td>
   </tr>
 </table>
