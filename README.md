@@ -73,10 +73,6 @@
 모니터링 서비스별 아키텍처 문서 및 상세한 설치 가이드 정보는 <b>[📑여기](https://github.com/PaaS-TA/Guide/tree/working-new-template)</b>에서 확인할 수 있다.
 
 ## Contributors ✨
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
 <table>
   <tr>
     <td align="center"><a href="https://github.com/hsohans"><img src="https://avatars.githubusercontent.com/u/51317201?v=4" width="100px;" alt=""/><br /><sub><b>hso</b></sub></a><br /><a href="#" title="Code">💻</a> <a href="#" title="Reviewed Pull Requests">👀</a></td>
