@@ -68,8 +68,8 @@
 　📁 **bosh-addon** ▸ BOSH (모니터링 설치 옵션 적용) 배포 파일  
 　📁 **paasta-addon** ▸ PaaS-TA (모니터링 설치 옵션 적용) 배포 파일  
 　📁 **paasta-monitoring** ▸ PaaS-TA Monitoring 배포 파일  
-　📁 **logsearch** ▸ Logsearch 배포 파일  
 　📁 **pinpoint-monitoring** ▸ Pinpoint Monitoring 배포 파일  
+　📁 **logsearch** ▸ Logsearch 배포 파일  
 
 모니터링 서비스별 아키텍처 문서 및 상세한 설치 가이드 정보는 <b>[📑여기](https://github.com/PaaS-TA/Guide/tree/working-new-template)</b>에서 확인할 수 있다.
 
