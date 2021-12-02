@@ -63,12 +63,13 @@
 <i>🚩 You are here.</i>
 
 # Monitoring Deployment
-본 저장소에서는 **PaaS-TA Monitoring Dashboard** 설치를 위한 각종 설치 스크립트와 매니페스트 파일을 정의 및 보관하고 있으며 현재 해당 저장소를 통해 배포를 지원하고 있는 범위는 다음과 같다.
+본 저장소에서는 PaaS-TA Monitoring 환경 설치를 위한 각종 설치 스크립트와 매니페스트 파일을 정의 및 보관하고 있으며 해당 저장소를 통해 배포를 지원하고 있는 범위는 다음과 같습니다.
 
-- <b>BOSH(+Monitoring Dashboard)</b>의 배포를 위한 옵션 적용 파일
-- <b>PaaS-TA(+Monitoring Dashboard)</b>의 배포 위한 옵션 적용 파일
-- <b>Logsearch</b>의 배포
-- <b>Pinpoint Monitoring</b>의 배포
+　📁 **bosh-addon** ▸ BOSH (모니터링 설치 옵션 적용) 배포 파일  
+　📁 **paasta-addon** ▸ PaaS-TA (모니터링 설치 옵션 적용) 배포 파일  
+　📁 **monitoring-deployment** ▸ PaaS-TA Monitoring 배포 파일  
+　📁 **logsearch** ▸ Logsearch 배포 파일  
+　📁 **pinpoint-monitoring** ▸ Pinpoint Monitoring 배포 파일  
 
 모니터링 서비스별 아키텍처 문서 및 상세한 설치 가이드 정보는 <b>[📑여기](https://github.com/PaaS-TA/Guide/tree/working-new-template)</b>에서 확인할 수 있다.
 
