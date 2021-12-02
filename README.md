@@ -67,7 +67,7 @@
 
 　📁 **bosh-addon** ▸ BOSH (모니터링 설치 옵션 적용) 배포 파일  
 　📁 **paasta-addon** ▸ PaaS-TA (모니터링 설치 옵션 적용) 배포 파일  
-　📁 **monitoring-deployment** ▸ PaaS-TA Monitoring 배포 파일  
+　📁 **paasta-monitoring** ▸ PaaS-TA Monitoring 배포 파일  
 　📁 **logsearch** ▸ Logsearch 배포 파일  
 　📁 **pinpoint-monitoring** ▸ Pinpoint Monitoring 배포 파일  
 
