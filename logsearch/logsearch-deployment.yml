@@ -369,9 +369,9 @@ instance_groups:
 
 releases:
 - name: logsearch
-  url: https://nextcloud.paas-ta.org/index.php/s/no22SN4WcYzNegd/download
+  url: https://nextcloud.paas-ta.org/index.php/s/sBTYFWygNwFkxxd/download
   version: 211.1.1
-  sha1: 58ff2f5b7edf944f802d0a93f523eda42cd1e4c7
+  sha1: 2d867ae11e9189810e6bebc47e55ac5448f48a1b
 
 - name: bpm
   url: https://bosh.io/d/github.com/cloudfoundry/bpm-release?v=1.1.6
