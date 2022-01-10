@@ -5,8 +5,8 @@ bosh create-env bosh.yml \
 	--vars-store=aws/creds.yml \
 	-o aws/cpi.yml \
 	-o uaa.yml \
-	-o cce.yml \
 	-o credhub.yml \
+	-o cce.yml \
 	-o jumpbox-user.yml \
 	-o syslog.yml \
 	-o paasta-addon/paasta-monitoring-agent.yml \
