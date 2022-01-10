@@ -16,7 +16,7 @@ releases:
   - name: paasta-pinpoint-monitoring-release
     url: https://nextcloud.paas-ta.org/index.php/s/zMHxiGwfMFtYbbe/download
     version: 1.2
-    sha1: 7ad0c20a18de23b38e12b37cf9e0c41cd38ff270
+    sha1: 4387ea8942e27457d6d9513a4da08db1cbf97880
 
 instance_groups:
   - name: h_master                    	#작업 이름(필수)
