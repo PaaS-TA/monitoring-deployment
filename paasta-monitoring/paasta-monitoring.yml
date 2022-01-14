@@ -14,19 +14,19 @@ stemcells:
 
 releases:
   - name: paasta-monitoring-release
-    sha1: b4b6364dc55a83ec94a4d9a4e25e842911b5365e
-    version: "5.6.1" 
-    url: https://nextcloud.paas-ta.org/index.php/s/R2sRBf4GxJ74FSz/download
+    sha1: da38298a2c8517e57c39ae259a9ecfc4eb9e8d2d
+    version: 5.6.2
+    url: https://nextcloud.paas-ta.org/index.php/s/ZSsqZwwspLd4REe/download
   - name: bpm
     url: https://bosh.io/d/github.com/cloudfoundry/bpm-release?v=1.1.9
     version: 1.1.9
     sha1: dcf0582d838a73de29da273552ae79ac3098ee8b
   - name: redis
-    version: '15.3.5'
+    version: 15.3.5
     url: https://nextcloud.paas-ta.org/index.php/s/aynq3wrgzD93Nr8/download
     sha1: bb6289896cf55ee7507c915356d319a0935bcfd4
   - name: influxdb
-    version: '1.8.4'
+    version: 1.8.4
     url: https://nextcloud.paas-ta.org/index.php/s/dRBCxNjtEktnKz9/download
     sha1: 66c189b58f4eb13999cca344eca71fa50335bd25
 
