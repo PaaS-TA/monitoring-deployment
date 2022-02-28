@@ -1,0 +1,4 @@
+# paasta-monitoring-vars.yml 파일에서 system_type 옵션 중 IaaS 옵션이 없다면 iaas-monitoring-batch VM 배포를 하지 않게 한다.
+
+- type: remove
+  path: /instance_groups/name=iaas-monitoring-batch
