@@ -371,6 +371,8 @@ instance_groups:
       searchguard:
         options: *searchguard_options
 
+features:
+  use_dns_addresses: false
 
 releases:
 - name: logsearch
