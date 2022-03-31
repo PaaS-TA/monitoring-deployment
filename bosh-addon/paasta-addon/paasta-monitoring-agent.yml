@@ -3,8 +3,8 @@
   value:
     name: paasta-monitoring-agent
     version: 5.5
-    url: https://nextcloud.paas-ta.org/index.php/s/fNYrGYgbeKqB6DZ/download
     sha1: ab7997b387cd4e55194fe6b2e0be5590ea3c0ed5
+    url: https://nextcloud.paas-ta.org/index.php/s/fNYrGYgbeKqB6DZ/download
 
 - type: replace
   path: /instance_groups/name=bosh/jobs/-

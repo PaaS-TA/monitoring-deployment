@@ -1,9 +1,11 @@
 - type: replace
   path: /releases/name=paasta-monitoring-agent/url
   value: file://((releases_dir))/paasta-monitoring/paasta-monitoring-agent.tgz
+
 - type: replace
   path: /releases/name=paasta-monitoring-agent/version
   value: 5.5
+  
 - type: replace
   path: /releases/name=paasta-monitoring-agent/sha1
   value: ab7997b387cd4e55194fe6b2e0be5590ea3c0ed5
