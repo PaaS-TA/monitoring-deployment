@@ -1,5 +1,5 @@
-#Zabbix agent
-server_ip: "127.0.0.1"
+# Set prameters for zabbix-agent jobs
+server_ip: "xxx.xxx.xxx.xxx"
 listen_port: "10050"
-server_active: "10.0.240.10:10051"
-host_metadata: "zabbix"
+server_active: "xxx.xxx.xxx.xxx:10051"
+host_metadata: "paasta"
