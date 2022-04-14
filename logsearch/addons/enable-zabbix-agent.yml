@@ -1,19 +1,17 @@
 - type: replace
   path: /addons?/-
   value:
-    include:
-      stemcell:
-      - os: ubuntu-bionic
+    name: zabbix-agent
     jobs:
     - name: zabbix-agent
+      release: zabbix-agent
       properties:
         zabbix-agent:
           server: ((server_ip))
           listen_port: ((listen_port))
           server_active: ((server_active))
           host_metadata: ((host_metadata))
-      release: zabbix-agent
-    name: zabbix-agent
+
 - type: replace
   path: /releases/-
   value:
