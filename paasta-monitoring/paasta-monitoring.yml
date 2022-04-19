@@ -14,7 +14,7 @@ stemcells:
 
 releases:
   - name: paasta-monitoring-release
-    version: 5.6.4
+    version: 5.7.0
     sha1: 44e5b1a03f6b06f79e4a277eb435ea0abe8ab9f2
     url: https://nextcloud.paas-ta.org/index.php/s/AdTkM3PoiAoKo9q/download
   - name: bpm
@@ -345,7 +345,37 @@ instance_groups:
               tenant_id: ((openstack_tenant_id))
               endpoint: ((openstack_endpoint))
               keystone_url: ((openstack_keystone_url))
-                
+
+  - name: td-agent
+    azs: ((td-agent_azs))
+    instances: ((td-agent_instances))
+    vm_type: ((td-agent_vm_type))
+    stemcell: default
+    networks:
+      - name: ((td-agent_network))
+        static_ips:
+          - ((td-agent_ip))
+    jobs:
+      - name: td-agent
+        release: paasta-monitoring-release
+        properties:
+          logging:
+            db:
+              name: ((logging_db_name))
+            measurement:
+              name: ((logging_measurement_name))
+            time:
+              precision: ((logging_time_precision))
+          influxdb:
+            http:
+              host: ((metric_url))
+            port: ((influxdb_http_port))
+            user: ((influxdb_username))
+            password: ((influxdb_password))
+            ssl:
+              enabled: ((influxdb_https_enabled))
+
+
 variables:
   - name: redis_password
     type: password
