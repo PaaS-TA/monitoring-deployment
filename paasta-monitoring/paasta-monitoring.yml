@@ -13,10 +13,10 @@ stemcells:
     version: ((stemcell_version))
 
 releases:
-  - name: paasta-monitoring-release
+  - name: monitoring-dashboard-release
     version: 5.7.0
-    sha1: 44e5b1a03f6b06f79e4a277eb435ea0abe8ab9f2
-    url: https://nextcloud.paas-ta.org/index.php/s/AdTkM3PoiAoKo9q/download
+    sha1: 363de9cdaf82f14374edabf5823c7806bd71e6c7
+    url: https://nextcloud.paas-ta.org/index.php/s/KZEQDT8ZATMoGNZ/download
   - name: bpm
     version: 1.1.9
     sha1: dcf0582d838a73de29da273552ae79ac3098ee8b
@@ -103,7 +103,7 @@ instance_groups:
           - ((mariadb_ip))
     jobs:
       - name: mariadb
-        release: paasta-monitoring-release
+        release: monitoring-dashboard-release
         properties:
           mariadb:
             port: ((mariadb_port))
@@ -119,7 +119,7 @@ instance_groups:
       - name: ((monitoring_batch_network))
     jobs:
       - name: monitoring-batch
-        release: paasta-monitoring-release
+        release: monitoring-dashboard-release
         consumes:
           influxdb: {from: influxdb}
         properties:
@@ -171,7 +171,7 @@ instance_groups:
       - name: ((iaas_monitoring_batch_network))
     jobs:
       - name: iaas-monitoring-batch
-        release: paasta-monitoring-release
+        release: monitoring-dashboard-release
         properties:
           iaas-monitoring-batch:
             db:
@@ -219,7 +219,7 @@ instance_groups:
       - name: ((caas_monitoring_batch_network))
     jobs:
       - name: caas-monitoring-batch
-        release: paasta-monitoring-release
+        release: monitoring-dashboard-release
         consumes:
           influxdb: {from: influxdb}
         properties:
@@ -252,7 +252,7 @@ instance_groups:
       - name: ((saas_monitoring_batch_network))
     jobs:
       - name: saas-monitoring-batch
-        release: paasta-monitoring-release
+        release: monitoring-dashboard-release
         consumes:
           influxdb: {from: influxdb}
         properties:
@@ -289,7 +289,7 @@ instance_groups:
 
     jobs:
       - name: monitoring-web
-        release: paasta-monitoring-release
+        release: monitoring-dashboard-release
         properties:
           monitoring-web:
             db:
@@ -357,7 +357,7 @@ instance_groups:
           - ((td-agent_ip))
     jobs:
       - name: td-agent
-        release: paasta-monitoring-release
+        release: monitoring-dashboard-release
         properties:
           logging:
             db:
