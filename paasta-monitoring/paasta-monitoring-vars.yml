@@ -48,9 +48,16 @@ openstack_tenant_id: "944774277a034e648ab72e318db3f976"
 openstack_endpoint: "http://203.255.255.100:5000/v3"
 openstack_keystone_url: "http://203.255.255.100:35357/v3"
 
+# TD-AGENT(Fluentd) INFO
+td-agent_ip: "10.200.2.130"
+logging_db_name: "logging_db"
+logging_measurement_name: "logging_measurement"
+logging_time_precision: "s"    # hour(h), minutes(m), second(s), millisecond(ms), microsecond(u), nanosecond(ns)
+influxdb_http_port: "8086"     # default 8086
+
 # STEMCELL
 stemcell_os: "ubuntu-bionic"                # Stemcell OS
-stemcell_version: "1.76"                    # Stemcell Version
+stemcell_version: "1.61"                    # Stemcell Version
 
 # REDIS
 redis_azs: ["z1"]                           # Redis 가용 존
