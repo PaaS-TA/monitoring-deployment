@@ -114,3 +114,9 @@ monitoring_web_azs: ["z1"]                  # Monitoring-WEB 가용 존
 monitoring_web_instances: 1                 # Monitoring-WEB 인스턴스 수
 monitoring_web_vm_type: "small"             # Monitoring-WEB VM 종류
 monitoring_web_network: "default"           # Monitoring-WEB 네트워크
+
+# TD-AGENT (Fluentd)
+td-agent_azs: ["z1"]              # TD-AGENT(Fluentd) 가용 존
+td-agent_instances: 1             # TD-AGENT(Fluentd) 인스턴스 수
+td-agent_vm_type: "small"         # TD-AGENT(Fluentd) VM 종류
+td-agent_network: "default"       # TD-AGENT(Fluentd) 네트워크
