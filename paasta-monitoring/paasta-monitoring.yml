@@ -27,8 +27,8 @@ releases:
     url: https://nextcloud.paas-ta.org/index.php/s/aynq3wrgzD93Nr8/download
   - name: influxdb
     version: 1.8.4
-    sha1: 66c189b58f4eb13999cca344eca71fa50335bd25
-    url: https://nextcloud.paas-ta.org/index.php/s/dRBCxNjtEktnKz9/download
+    sha1: d9aa197362443c683f8b333d71dc1296db7e0d00
+    url: https://nextcloud.paas-ta.org/index.php/s/e6HtKmEtMnT6QCZ/download
 
 
 instance_groups:
