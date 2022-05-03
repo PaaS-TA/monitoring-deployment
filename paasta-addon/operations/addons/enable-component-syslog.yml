@@ -17,7 +17,7 @@
           # permitted_peer: ((syslog_permitted_peer))
           port: ((syslog_port))
           tls_enabled: false
-          transport: relp
+          transport: ((syslog_transport))
       release: syslog
     name: syslog_forwarder
 - type: replace
