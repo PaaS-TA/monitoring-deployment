@@ -15,8 +15,8 @@ stemcells:
 releases:
   - name: monitoring-dashboard-release
     version: 5.7.0
-    sha1: 57c8c5689f246e8452bce792b3a6432fe54eeeba
-    url: https://nextcloud.paas-ta.org/index.php/s/NWYj9BXAM42sLPj/download
+    sha1: 19a48835c9504488878f2129ba6776a9cda75025
+    url: https://nextcloud.paas-ta.org/index.php/s/Wd4gbB3syS8xQz3/download
   - name: bpm
     version: 1.1.9
     sha1: dcf0582d838a73de29da273552ae79ac3098ee8b
@@ -302,11 +302,6 @@ instance_groups:
               password: ((influxdb_password))
               url: ((metric_url)):8086
               https_enabled: ((influxdb_https_enabled))
-            elasticsearch:
-              username: ((elasticsearch_username))
-              password: ((elasticsearch_password))
-              url: ((elasticsearch_master_ip)):((elasticsearch_master_port))
-              https_enabled: ((elasticsearch_https_enabled))
             paasta:
               system_domain: ((system_domain))
             bosh:
