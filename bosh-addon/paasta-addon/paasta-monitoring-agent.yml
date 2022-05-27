@@ -1,10 +1,10 @@
 - type: replace
   path: /releases/-
   value:
-    name: paasta-monitoring-agent
-    version: 5.5
-    sha1: ab7997b387cd4e55194fe6b2e0be5590ea3c0ed5
-    url: https://nextcloud.paas-ta.org/index.php/s/fNYrGYgbeKqB6DZ/download
+    name: monitoring-agent-release
+    version: 5.8.0
+    sha1: 69cd65a06040e440168ba802e25958124f3f2df2
+    url: https://nextcloud.paas-ta.org/index.php/s/yQqaGo3gFz2KHGi/download
 
 - type: replace
   path: /instance_groups/name=bosh/jobs/-
