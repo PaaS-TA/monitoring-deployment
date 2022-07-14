@@ -1,16 +1,16 @@
 - type: replace
   path: /releases/-
   value:
-    name: paasta-monitoring-agent
-    version: 5.5
-    sha1: ab7997b387cd4e55194fe6b2e0be5590ea3c0ed5
-    url: https://nextcloud.paas-ta.org/index.php/s/fNYrGYgbeKqB6DZ/download
+    name: monitoring-agent-release
+    version: 5.8.0
+    sha1: 86e22b9cf488ba17c2e0da8c8b317dff61e33d50
+    url: https://nextcloud.paas-ta.org/index.php/s/syoXpCoF6swmqiT/download
 
 - type: replace
   path: /instance_groups/name=bosh/jobs/-
   value:
     name: metrics_agent
-    release: paasta-monitoring-agent
+    release: monitoring-agent-release
     properties:
       metrics_agent:
         influxdb:
