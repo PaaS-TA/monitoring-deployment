@@ -1,7 +1,3 @@
-### On-Demand Bosh Deployment Name Setting ###
-inception_os_user_name: "ubuntu"
-deployment_name: "pinpoint-monitoring"                  # On-Demand Deployment Name
-
 ### Main Stemcells Setting ###
 stemcell_os: "ubuntu-bionic"                            # Deployment Main Stemcell OS
 stemcell_version: "1.90"                                # Main Stemcell Version

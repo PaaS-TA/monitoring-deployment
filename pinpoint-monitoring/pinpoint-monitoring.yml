@@ -1,5 +1,5 @@
 # paasta-pinpoint-vsphere 설정 파일 내용
-name: "((deployment_name))"                 # 서비스 배포이름(필수)
+name: pinpoint-monitoring                   # 서비스 배포이름(필수)
 
 update:
   canaries: 1                               # canary 인스턴스 수(필수)
