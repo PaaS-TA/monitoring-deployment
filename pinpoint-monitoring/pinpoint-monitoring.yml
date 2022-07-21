@@ -55,7 +55,8 @@ instance_groups:
     stemcell: "((stemcell_alias))"
     persistent_disk_type: "((collector_persistent_disk_type))"
     networks:                               # 네트워크 구성정보
-      - name: "((collector_network))"       # Networks block에서 선언한 network 이름(필수)
+      - name: "((pinpoint_web_network))"    # Networks block에서 선언한 network 이름(필수)
+        static_ips: ((pinpoint_was_ip))
     jobs:
       - name: pinpoint_web
         release: "((releases_name))"

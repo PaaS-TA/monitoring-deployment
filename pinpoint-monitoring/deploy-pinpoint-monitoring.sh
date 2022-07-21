@@ -5,13 +5,11 @@ ScanIaaSOption=`grep IaaS ../paasta-monitoring/paasta-monitoring-vars.yml`
 
 if [ -n "$ScanIaaSOption" ]; then
     bosh -e micro-bosh -n -d pinpoint-monitoring deploy pinpoint-monitoring.yml \
-        -o use-public-network.yml \
         -o addons/enable-zabbix-agent.yml \
         -l pinpoint-monitoring-vars.yml \
         -l ../../common/common_vars.yml
 else
     bosh -e micro-bosh -n -d pinpoint-monitoring deploy pinpoint-monitoring.yml \
-        -o use-public-network.yml \
         -l pinpoint-monitoring-vars.yml \
         -l ../../common/common_vars.yml
 fi
