@@ -14,13 +14,14 @@
             measurement: cf_metrics
             processMeasurement: cf_process_metrics
             url: ((metric_url)):8089
-      release: paasta-monitoring-agent
+      release: monitoring-agent-release
     name: paasta_metrics_agent
+
 - type: replace
   path: /instance_groups/name=diego-cell/jobs/-
   value:
     name: cadvisor
-    release: paasta-monitoring-agent
+    release: monitoring-agent-release
     properties:
       cadvisor:
         storage_driver: influxdb
@@ -32,6 +33,7 @@
           ca_cert: "((service_cf_internal_ca.certificate))"
           client_cert: "((diego_rep_client.certificate))"
           client_key: "((diego_rep_client.private_key))"
+          
 - type: replace
   path: /releases/-
   value:

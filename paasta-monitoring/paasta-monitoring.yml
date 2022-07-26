@@ -14,9 +14,9 @@ stemcells:
 
 releases:
   - name: monitoring-dashboard-release
-    version: 5.7.1
-    sha1: 19a48835c9504488878f2129ba6776a9cda75025
-    url: https://nextcloud.paas-ta.org/index.php/s/Wd4gbB3syS8xQz3/download
+    version: 5.7.2
+    sha1: 7f96878fc3e49d64b6bcc2a9d12ac3ecf1556997
+    url: https://nextcloud.paas-ta.org/index.php/s/GcySxpstHSS8Sxq/download
   - name: bpm
     version: 1.1.9
     sha1: dcf0582d838a73de29da273552ae79ac3098ee8b

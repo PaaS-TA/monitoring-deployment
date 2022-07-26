@@ -10,7 +10,7 @@
   path: /instance_groups/name=bosh/jobs/-
   value:
     name: metrics_agent
-    release: paasta-monitoring-agent
+    release: monitoring-agent-release
     properties:
       metrics_agent:
         influxdb:
