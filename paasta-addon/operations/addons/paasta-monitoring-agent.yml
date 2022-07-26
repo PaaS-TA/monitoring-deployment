@@ -36,6 +36,6 @@
   path: /releases/-
   value:
     name: monitoring-agent-release
-    version: 5.8.0
-    sha1: 69cd65a06040e440168ba802e25958124f3f2df2
-    url: https://nextcloud.paas-ta.org/index.php/s/yQqaGo3gFz2KHGi/download
+    version: 5.8.1
+    sha1: ca6d69f116360e689802dd518f40d013646e4ab1
+    url: https://nextcloud.paas-ta.org/index.php/s/NHiQZ9Z6GKpE4PW/download
