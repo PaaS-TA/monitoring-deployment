@@ -2,9 +2,9 @@
   path: /releases/-
   value:
     name: monitoring-agent-release
-    version: 5.8.0
-    sha1: 86e22b9cf488ba17c2e0da8c8b317dff61e33d50
-    url: https://nextcloud.paas-ta.org/index.php/s/syoXpCoF6swmqiT/download
+    version: 5.8.1
+    sha1: ca6d69f116360e689802dd518f40d013646e4ab1
+    url: https://nextcloud.paas-ta.org/index.php/s/NHiQZ9Z6GKpE4PW/download
 
 - type: replace
   path: /instance_groups/name=bosh/jobs/-
