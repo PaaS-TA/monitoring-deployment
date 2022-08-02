@@ -45,7 +45,7 @@ instance_groups:
 
     jobs:
       - name: redis
-        release: redis
+        release: monitoring-redis-release
         properties:
           password: ((redis_password))
           protected_mode: ((redis_protected_mode))
@@ -58,7 +58,7 @@ instance_groups:
     networks: [{name: ((sanity_tests_network))}]
     jobs:
       - name: sanity-tests
-        release: redis
+        release: monitoring-redis-release
 
   - name: influxdb
     azs: ((influxdb_azs))
