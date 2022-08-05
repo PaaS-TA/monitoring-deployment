@@ -21,7 +21,7 @@ releases:
     version: 1.1.9
     sha1: dcf0582d838a73de29da273552ae79ac3098ee8b
     url: https://bosh.io/d/github.com/cloudfoundry/bpm-release?v=1.1.9
-  - name: paasta-redis-release
+  - name: monitoring-redis-release
     version: 5.8.0
     sha1: 1175315ae84e87a85b52dfa57537c6bda828625e
     url: https://nextcloud.paas-ta.org/index.php/s/kHp8yoFjdfRdBNH/download
