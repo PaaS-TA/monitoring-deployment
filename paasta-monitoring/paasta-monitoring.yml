@@ -25,10 +25,10 @@ releases:
     version: 5.8.0
     sha1: 1175315ae84e87a85b52dfa57537c6bda828625e
     url: https://nextcloud.paas-ta.org/index.php/s/kHp8yoFjdfRdBNH/download
-  - name: influxdb
-    version: 1.8.4
-    sha1: d9aa197362443c683f8b333d71dc1296db7e0d00
-    url: https://nextcloud.paas-ta.org/index.php/s/e6HtKmEtMnT6QCZ/download
+  - name: monitoring-influxdb-release
+    version: 5.8.0
+    sha1: 978d02f8106ba7f030c724d4630e9ed1d1cd2527
+    url: https://nextcloud.paas-ta.org/index.php/s/K69bBenbNSs8adQ/download
 
 
 instance_groups:
@@ -73,7 +73,7 @@ instance_groups:
 
     jobs:
       - name: influxdb
-        release: influxdb
+        release: monitoring-influxdb-release
         properties:
           influxdb:
             database: cf_metric_db
@@ -85,7 +85,7 @@ instance_groups:
             https_enabled: ((influxdb_https_enabled))
             pem_key: ((influxdb_ssl.certificate))((influxdb_ssl.private_key))
       - name: chronograf
-        release: influxdb
+        release: monitoring-influxdb-release
         properties:
           chronograf:
             https_enabled: ((influxdb_https_enabled))
