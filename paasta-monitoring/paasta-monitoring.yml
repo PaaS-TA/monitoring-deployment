@@ -18,9 +18,9 @@ releases:
     sha1: 7f96878fc3e49d64b6bcc2a9d12ac3ecf1556997
     url: https://nextcloud.paas-ta.org/index.php/s/GcySxpstHSS8Sxq/download
   - name: bpm
-    version: 1.1.9
-    sha1: dcf0582d838a73de29da273552ae79ac3098ee8b
-    url: https://bosh.io/d/github.com/cloudfoundry/bpm-release?v=1.1.9
+    version: 1.1.15
+    sha1: 0d48aa01a65b947b97570234eb2401e821a8bd35
+    url: https://bosh.io/d/github.com/cloudfoundry/bpm-release?v=1.1.15
   - name: monitoring-redis-release
     version: 5.8.0
     sha1: 1175315ae84e87a85b52dfa57537c6bda828625e
@@ -42,13 +42,13 @@ instance_groups:
       - name: ((redis_network))
         static_ips:
           - ((redis_ip))
-
     jobs:
       - name: redis
         release: monitoring-redis-release
         properties:
           password: ((redis_password))
           protected_mode: ((redis_protected_mode))
+
   - name: sanity-tests
     azs: ((sanity_tests_azs))
     instances: ((sanity_tests_instances))
@@ -70,7 +70,6 @@ instance_groups:
       - name: ((influxdb_network))
         static_ips:
           - ((metric_url))
-
     jobs:
       - name: influxdb
         release: monitoring-influxdb-release
@@ -286,7 +285,6 @@ instance_groups:
         default: [dns, gateway]
       - name: ((public_network_name))
         static_ips: [((monitoring_api_url))]
-
     jobs:
       - name: monitoring-web
         release: monitoring-dashboard-release
@@ -369,7 +367,6 @@ instance_groups:
             password: ((influxdb_password))
             ssl:
               enabled: ((influxdb_https_enabled))
-
 
 variables:
   - name: redis_password
