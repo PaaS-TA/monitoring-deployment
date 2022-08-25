@@ -113,6 +113,12 @@ monitoring_web_instances: 1		# Monitoring-WEB 인스턴스 수
 monitoring_web_vm_type: "small"		# Monitoring-WEB VM 종류
 monitoring_web_network: "default"	# Monitoring-WEB 네트워크
 
+# MONITORING-API
+monitoring_api_azs: ["z1"]		# Monitoring-API 가용 존
+monitoring_api_instances: 1		# Monitoring-API 인스턴스 수
+monitoring_api_vm_type: "small"		# Monitoring-API VM 종류
+monitoring_api_network: "default"	# Monitoring-API 네트워크
+
 # TD-AGENT (Fluentd)
 td-agent_azs: ["z1"]              # Monitoring-WEB 가용 존
 td-agent_instances: 1             # Monitoring-WEB 인스턴스 수

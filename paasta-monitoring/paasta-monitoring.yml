@@ -14,9 +14,9 @@ stemcells:
 
 releases:
   - name: monitoring-dashboard-release
-    version: 5.7.2
-    sha1: 7f96878fc3e49d64b6bcc2a9d12ac3ecf1556997
-    url: https://nextcloud.paas-ta.org/index.php/s/GcySxpstHSS8Sxq/download
+    version: 5.8.0
+    sha1: 380ece8a425cefa878de2927048f609022e5c70c
+    url: https://nextcloud.paas-ta.org/index.php/s/9p94WiB44zAA338/download
   - name: bpm
     version: 1.1.15
     sha1: 0d48aa01a65b947b97570234eb2401e821a8bd35
@@ -338,6 +338,52 @@ instance_groups:
               tenant_id: ((openstack_tenant_id))
               endpoint: ((openstack_endpoint))
               keystone_url: ((openstack_keystone_url))
+
+  - name: monitoring-api
+    azs: ((monitoring_api_azs))
+    instances: ((monitoring_api_instances))
+    vm_type: ((monitoring_api_vm_type))
+    stemcell: default
+    networks:
+      - name: ((monitoring_api_network))
+    jobs:
+      - name: monitoring-api
+        release: monitoring-dashboard-release
+        properties:
+          monitoring_services: ((system_type))
+          bosh:
+            ip: ((bosh_ip))
+            uuid: ((bosh_uuid))
+            client_admin_secret: ((bosh_client_admin_secret))
+          paasta:
+            system_domain: ((system_domain))
+          mariadb:
+            host: ((mariadb_ip))
+            port: ((mariadb_port))
+            username: ((mariadb_username))
+            password: ((mariadb_password))
+          influxdb:
+            host: ((metric_url))
+            username: ((influxdb_username))
+            password: ((influxdb_password))
+          redis:
+            ip: ((redis_ip))
+            password: ((redis_password))
+          openstack:
+            endpoint: ((openstack_endpoint))
+            domain: ((openstack_domain))
+            username: ((openstack_username))
+            password: ((openstack_password))
+            tenant_id: ((openstack_tenant_id))
+          zabbix:
+            host: ((zabbix_host))
+            admin_id: ((zabbix_admin_id))
+            admin_pw: ((zabbix_admin_pw))
+          kubernetes:
+            master_node_ip: ((kubernetes_ip))
+            token: ((kubernetes_token))
+          pinpoint:
+            web: ((pinpoint_was_ip))
 
   - name: td-agent
     azs: ((td-agent_azs))
