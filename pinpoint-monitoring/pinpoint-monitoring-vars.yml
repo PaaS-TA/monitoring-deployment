@@ -1,6 +1,6 @@
 ### Main Stemcells Setting ###
 stemcell_os: "ubuntu-bionic"                            # Deployment Main Stemcell OS
-stemcell_version: "1.92"                                # Main Stemcell Version
+stemcell_version: "1.97"                                # Main Stemcell Version
 stemcell_alias: "default"                               # Main Stemcell Alias
 
 ### On-Demand Release Deployment Setting ###
