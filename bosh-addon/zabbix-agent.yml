@@ -2,9 +2,9 @@
   path: /releases/-
   value:
     name: zabbix-agent
-    version: 5.0.14
-    sha1: 4417182486ba866ffe5aeb274e2f5468da159242
-    url: https://nextcloud.paas-ta.org/index.php/s/dCGsabesrsBrpYd/download
+    version: 5.8.1
+    sha1: 883c44df5bbc9f5589e40152bc3fb67f906515e5
+    url: https://nextcloud.paas-ta.org/index.php/s/XTrqabaqJXD2F9L/download
 
 - type: replace
   path: /instance_groups/name=bosh/jobs/-
