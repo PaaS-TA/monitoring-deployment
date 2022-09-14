@@ -1,0 +1,3 @@
+---
+- type: remove
+  path: /instance_groups/name=monitoring-web/networks/name=((public_network_name))
