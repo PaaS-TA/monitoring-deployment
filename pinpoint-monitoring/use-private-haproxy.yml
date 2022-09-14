@@ -1,0 +1,3 @@
+---
+- type: remove
+  path: /instance_groups/name=haproxy_webui/networks/name=((public_networks_name))

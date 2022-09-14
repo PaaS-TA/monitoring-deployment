@@ -1,10 +1,13 @@
 ### Main Stemcells Setting ###
 stemcell_os: "ubuntu-bionic"                            # Deployment Main Stemcell OS
-stemcell_version: "1.97"                                # Main Stemcell Version
+stemcell_version: "1.92"                                # Main Stemcell Version
 stemcell_alias: "default"                               # Main Stemcell Alias
 
+### Enable private network for HAProxy
+enable_private_network: "yes"
+
 ### On-Demand Release Deployment Setting ###
-releases_name:  "paasta-pinpoint-monitoring-release"    # On-Demand Release Name
+releases_name:  "monitoring-pinpoint-release"    # On-Demand Release Name
 public_networks_name: "vip"                             # Pinpoint Public Network Name
 pem_ssh: "true"                                         # h_master에서 모니터링 하려는 VM에 SSH 접근시 사용하는 Key File 지정 여부(default:false)
 pem_key: |                                              # h_master에서 SSH 접근시 사용하는 Key
