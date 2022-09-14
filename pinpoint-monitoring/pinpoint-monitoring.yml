@@ -13,10 +13,10 @@ stemcells:
     version: "((stemcell_version))"
 
 releases:
-  - name: paasta-pinpoint-monitoring-release
-    url: https://nextcloud.paas-ta.org/index.php/s/zMHxiGwfMFtYbbe/download
-    version: 1.2
-    sha1: 4387ea8942e27457d6d9513a4da08db1cbf97880
+  - name: monitoring-pinpoint-release
+    url: https://nextcloud.paas-ta.org/index.php/s/NLoeDQwdLnZPten/download
+    version: 5.8.1
+    sha1: c40c8bc5e6e7444f63062937d731d1ab7a1f3e9e
 
 instance_groups:
   - name: h_master                          # 작업 이름(필수)
