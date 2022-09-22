@@ -1,3 +1,6 @@
 ---
-- type: remove
-  path: /instance_groups/name=monitoring-web/networks/name=((public_network_name))
+- type: replace
+  path: /instance_groups/name=monitoring-web/networks
+  value:
+  - name: ((monitoring_web_network))
+    static_ips: [((monitoring_api_url))]

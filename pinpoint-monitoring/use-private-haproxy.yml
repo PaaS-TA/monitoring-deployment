@@ -1,3 +1,6 @@
 ---
-- type: remove
-  path: /instance_groups/name=haproxy_webui/networks/name=((public_networks_name))
+- type: replace
+  path: /instance_groups/name=haproxy_webui/networks
+  value:
+  - name: ((haproxy_webui_network))
+    static_ips: [((saas_monitoring_url))
