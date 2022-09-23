@@ -70,6 +70,7 @@ instance_groups:
     persistent_disk_type: "((haproxy_webui_persistent_disk_type))"
     networks:                               # 네트워크 구성정보
       - name: "((haproxy_webui_network))"   # Networks block에서 선언한 network 이름(필수)
+        default: [dns, gateway]
       - name: "((public_networks_name))"
         static_ips: "((saas_monitoring_url))"
     jobs:
