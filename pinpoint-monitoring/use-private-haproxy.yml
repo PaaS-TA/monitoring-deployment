@@ -3,4 +3,4 @@
   path: /instance_groups/name=haproxy_webui/networks
   value:
   - name: ((haproxy_webui_network))
-    static_ips: [((saas_monitoring_url))
+    static_ips: [((saas_monitoring_url))]
