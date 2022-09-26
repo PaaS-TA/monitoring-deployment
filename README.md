@@ -16,9 +16,9 @@
   <tr align=center>
     <td rowspan=2 colspan=2>🚩 <a href="https://github.com/PaaS-TA/monitoring-deployment">모니터링</a></td>
     <td><a href="https://github.com/PaaS-TA/monitoring-dashboard-release">Monitoring</a></td>
-    <td><a href="https://github.com/PaaS-TA/monitoring-logsearch-release">Logsearch</a></td>
     <td><a href="https://github.com/PaaS-TA/monitoring-influxdb-release">InfluxDB</a></td>
     <td><a href="https://github.com/PaaS-TA/monitoring-redis-release">Redis</a></td>
+    <td></td>
   </tr>
   <tr align=center>
     <td><a href="https://github.com/PaaS-TA/monitoring-pinpoint-release">Pinpoint</td>
@@ -63,13 +63,12 @@
 <i>🚩 You are here.</i>
 
 # Monitoring Deployment
-본 저장소에서는 PaaS-TA Monitoring 환경 설치를 위한 각종 설치 스크립트와 매니페스트 파일을 정의 및 보관하고 있으며 저장소의 각 디렉토리를 통해 배포를 지원하고 있는 범위는 다음과 같습니다.
+본 저장소에서는 PaaS-TA Monitoring 서비스 설치를 위한 각종 배포 스크립트와 매니페스트 파일을 명세하고 저장하고 있으며 저장소의 각 디렉터리를 통해 배포를 지원하고 있는 범위는 다음과 같습니다.
 
-　📁 **bosh-addon** ▸ BOSH (모니터링 설치 옵션 적용) 배포 파일  
-　📁 **paasta-addon** ▸ PaaS-TA (모니터링 설치 옵션 적용) 배포 파일  
+　📁 **bosh-addon** ▸ BOSH (모니터링 옵션 적용) 배포 파일  
+　📁 **paasta-addon** ▸ PaaS-TA (모니터링 옵션 적용) 배포 파일  
 　📁 **paasta-monitoring** ▸ PaaS-TA Monitoring 배포 파일  
 　📁 **pinpoint-monitoring** ▸ Pinpoint Monitoring 배포 파일  
-　📁 **logsearch** ▸ Logsearch 배포 파일  
 
 모니터링 서비스별 아키텍처 문서 및 상세한 설치 가이드 정보는 <b>[📑여기](https://github.com/PaaS-TA/Guide)</b>에서 확인할 수 있습니다.
 
