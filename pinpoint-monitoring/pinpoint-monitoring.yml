@@ -77,12 +77,3 @@ instance_groups:
       - name: haproxy_webui
         release: "((releases_name))"
     syslog_aggregator: null
-
-properties:                                 # Pinpoint 설정정보
-  master:                                   # Pinpoint master 설정정보
-    replication: 1                          # Pinpoint master 복제개수
-    tcp_listen_port: 29994                  # Pinpoint master tcp port
-  yarn:                                     # Pinpoint yarn 설정정보      
-    resource_tracker_port: 8025             # Pinpoint yarn resource_tracker_port
-    scheduler_port: 8030                    # Pinpoint yarn scheduler_port
-    resourcemanager_port: 8040              # Pinpoint yarn resourcemanager_port
