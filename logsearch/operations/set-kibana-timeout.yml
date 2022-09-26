@@ -1,3 +1,0 @@
-- type: replace
-  path: /instance_groups/name=kibana/jobs/name=kibana/properties/kibana/health/timeout
-  value: ((kibana-timeout))
