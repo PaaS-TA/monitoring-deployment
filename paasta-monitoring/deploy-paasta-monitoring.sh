@@ -5,33 +5,29 @@ ScanIaaSOption=`grep IaaS paasta-monitoring-vars.yml`
 enablePrivateNetworkOpt=`grep 'enable_private_network' paasta-monitoring-vars.yml`
 
 if [ -n "$ScanIaaSOption" ]; then
-    if [[ "$enablePrivateNetworkOpt" =~ yes ]]; then
-	bosh -e micro-bosh -n -d paasta-monitoring deploy paasta-monitoring.yml \
-          -o use-public-network-aws.yml \
-	  -o use-private-monitoring-web.yml \
-          -o addons/enable-zabbix-agent.yml \
-          -l paasta-monitoring-vars.yml \
-          -l ../../common/common_vars.yml
-    else
-        bosh -e micro-bosh -n -d paasta-monitoring deploy paasta-monitoring.yml \
-          -o use-public-network-aws.yml \
-          -o addons/enable-zabbix-agent.yml \
-          -l paasta-monitoring-vars.yml \
-          -l ../../common/common_vars.yml
-    fi
+  if [[ "$enablePrivateNetworkOpt" =~ yes ]]; then
+    bosh -e micro-bosh -n -d paasta-monitoring deploy paasta-monitoring.yml \
+         -o use-private-monitoring-web.yml \
+         -o addons/enable-zabbix-agent.yml \
+         -l paasta-monitoring-vars.yml \
+         -l ../../common/common_vars.yml
+  else
+    bosh -e micro-bosh -n -d paasta-monitoring deploy paasta-monitoring.yml \
+         -o addons/enable-zabbix-agent.yml \
+         -l paasta-monitoring-vars.yml \
+         -l ../../common/common_vars.yml
+  fi
 else
-    if [[ "$enablePrivateNetworkOpt" =~ yes ]]; then
-	bosh -e micro-bosh -n -d paasta-monitoring deploy paasta-monitoring.yml \
-          -o use-public-network-aws.yml \
-	  -o use-private-monitoring-web.yml \
-          -o addons/disable-iaas-monitoring-batch.yml \
-          -l paasta-monitoring-vars.yml \
-          -l ../../common/common_vars.yml
-    else
-	bosh -e micro-bosh -n -d paasta-monitoring deploy paasta-monitoring.yml \
-          -o use-public-network-aws.yml \
-          -o addons/disable-iaas-monitoring-batch.yml \
-          -l paasta-monitoring-vars.yml \
-          -l ../../common/common_vars.yml
+  if [[ "$enablePrivateNetworkOpt" =~ yes ]]; then
+    bosh -e micro-bosh -n -d paasta-monitoring deploy paasta-monitoring.yml \
+         -o use-private-monitoring-web.yml \
+         -o addons/disable-iaas-monitoring-batch.yml \
+         -l paasta-monitoring-vars.yml \
+         -l ../../common/common_vars.yml
+  else
+    bosh -e micro-bosh -n -d paasta-monitoring deploy paasta-monitoring.yml \
+         -o addons/disable-iaas-monitoring-batch.yml \
+         -l paasta-monitoring-vars.yml \
+         -l ../../common/common_vars.yml
     fi
 fi
