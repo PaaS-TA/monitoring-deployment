@@ -395,7 +395,7 @@ instance_groups:
         static_ips:
           - ((td-agent_ip))
     jobs:
-      - name: td-agent
+      - name: fluentd
         release: monitoring-dashboard-release
         properties:
           logging:
