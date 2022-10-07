@@ -45,8 +45,8 @@ openstack_tenant_id: "3f7134b979074ea493c265ca39cc1ead"
 openstack_endpoint: "http://203.255.255.100:5000/v3"
 openstack_keystone_url: "http://203.255.255.100:35357/v3"
 
-# TD-AGENT(Fluentd) INFO
-td-agent_ip: "10.200.2.130"
+# Fluentd INFO
+fluentd_ip: "10.200.2.130"
 logging_db_name: "logging_db"
 logging_measurement_name: "logging_measurement"
 logging_time_precision: "s"    # hour(h), minutes(m), second(s), millisecond(ms), microsecond(u), nanosecond(ns)
@@ -119,8 +119,8 @@ monitoring_api_instances: 1		# Monitoring-API 인스턴스 수
 monitoring_api_vm_type: "small"		# Monitoring-API VM 종류
 monitoring_api_network: "default"	# Monitoring-API 네트워크
 
-# TD-AGENT (Fluentd)
-td-agent_azs: ["z1"]              # Monitoring-WEB 가용 존
-td-agent_instances: 1             # Monitoring-WEB 인스턴스 수
-td-agent_vm_type: "small"         # Monitoring-WEB VM 종류
-td-agent_network: "default"       # Monitoring-WEB 네트워크
+# Fluentd
+fluentd_azs: ["z1"]              # Fluentd 가용 존
+fluentd_instances: 1             # Fluentd 인스턴스 수
+fluentd_vm_type: "small"         # Fluentd VM 종류
+fluentd_network: "default"       # Fluentd 네트워크
