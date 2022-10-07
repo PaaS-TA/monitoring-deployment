@@ -385,15 +385,15 @@ instance_groups:
           pinpoint:
             web: ((pinpoint_was_ip))
 
-  - name: td-agent
-    azs: ((td-agent_azs))
-    instances: ((td-agent_instances))
-    vm_type: ((td-agent_vm_type))
+  - name: fluentd
+    azs: ((fluentd_azs))
+    instances: ((fluentd_instances))
+    vm_type: ((fluentd_vm_type))
     stemcell: default
     networks:
-      - name: ((td-agent_network))
+      - name: ((fluentd_network))
         static_ips:
-          - ((td-agent_ip))
+          - ((fluentd_ip))
     jobs:
       - name: fluentd
         release: monitoring-dashboard-release
