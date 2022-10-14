@@ -55,7 +55,7 @@ bosh_uuid: "ddc7443c-7fb4-4583-56bf-8f2eb677d746"  # BOSH VM에 접속 후 'cat 
 
 # STEMCELL
 stemcell_os: "ubuntu-bionic"		# Stemcell OS
-stemcell_version: "1.97"		# Stemcell Version
+stemcell_version: "1.107"		# Stemcell Version
 
 # REDIS
 redis_azs: ["z1"]			# Redis 가용 존
