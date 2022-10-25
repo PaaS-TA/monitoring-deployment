@@ -15,8 +15,8 @@ stemcells:
 releases:
   - name: monitoring-dashboard-release
     version: 5.8.1
-    sha1: 5d30ab76c86dbed959add8ceee3442cae768f177
-    url: https://nextcloud.paas-ta.org/index.php/s/n3n5zBYKry5NmLB/download
+    sha1: e6a94a1f11eccd76a45b79773e1e2b38ce257a65
+    url: https://nextcloud.paas-ta.org/index.php/s/tjdXNzsSKe5ZgBG/download
   - name: bpm
     version: 1.1.15
     sha1: 0d48aa01a65b947b97570234eb2401e821a8bd35
@@ -413,6 +413,9 @@ instance_groups:
             password: ((influxdb_password))
             ssl:
               enabled: ((influxdb_https_enabled))
+          fluentd:
+            port: ((syslog_port))
+            transport: ((syslog_transport))
 
 variables:
   - name: redis_password
