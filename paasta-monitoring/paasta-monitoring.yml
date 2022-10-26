@@ -27,8 +27,8 @@ releases:
     url: https://nextcloud.paas-ta.org/index.php/s/ER95NmGKtdEkgis/download
   - name: monitoring-influxdb-release
     version: 5.8.1
-    sha1: eb7e67c93a34ee9e15b042b8ec2e8fd555caba96
-    url: https://nextcloud.paas-ta.org/index.php/s/tZb2gEQ3caN8pjn/download
+    sha1: f663aacf4c8cae92ac834a92b20065329db4f4d6
+    url: https://nextcloud.paas-ta.org/index.php/s/f9ngX2qo7QJpoRt/download
 
 
 instance_groups:
@@ -75,7 +75,6 @@ instance_groups:
         release: monitoring-influxdb-release
         properties:
           influxdb:
-            database: cf_metric_db
             user: ((influxdb_username))
             password: ((influxdb_password))
             interval: ((influxdb_interval)) 
