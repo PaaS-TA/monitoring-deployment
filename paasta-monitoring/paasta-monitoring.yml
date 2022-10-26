@@ -26,9 +26,9 @@ releases:
     sha1: 2e49c4ba9bd1885c863e98f2b88aa721f3090be8
     url: https://nextcloud.paas-ta.org/index.php/s/ER95NmGKtdEkgis/download
   - name: monitoring-influxdb-release
-    version: 5.8.0
-    sha1: 978d02f8106ba7f030c724d4630e9ed1d1cd2527
-    url: https://nextcloud.paas-ta.org/index.php/s/K69bBenbNSs8adQ/download
+    version: 5.8.1
+    sha1: eb7e67c93a34ee9e15b042b8ec2e8fd555caba96
+    url: https://nextcloud.paas-ta.org/index.php/s/tZb2gEQ3caN8pjn/download
 
 
 instance_groups:
@@ -83,6 +83,10 @@ instance_groups:
             ips: 127.0.0.1
             https_enabled: ((influxdb_https_enabled))
             pem_key: ((influxdb_ssl.certificate))((influxdb_ssl.private_key))
+            cf_db_name: ((influxdb_cf_db_name))
+            bosh_db_name: ((influxdb_bosh_db_name))
+            container_db_name: ((influxdb_container_db_name))
+            logging_db_name: ((influxdb_logging_db_name))
       - name: chronograf
         release: monitoring-influxdb-release
         properties:

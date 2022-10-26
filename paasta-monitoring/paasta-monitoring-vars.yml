@@ -18,7 +18,7 @@ redis_password: "PaaS-TA2020"		# Redis 인증 Password. 영문/숫자/특수문�
 redis_protected_mode: "yes"		# Redis 루프백 인터페이스 쿼리 응답 설정
 influxdb_username: "admin"	        # Influxdb Admin 계정 Username
 influxdb_password: "PaaS-TA2020"	# Influxdb Admin 계정 Password
-influxdb_interval: "7d"                # Influxdb Retention Policy (bootstrapper)
+influxdb_interval: "7d"                 # Influxdb Retention Policy (bootstrapper)
 influxdb_https_enabled: "true"		# Influxdb HTTPS 설정
 influxdb_cf_db_name: "cf_metric_db"     # PaaS-TA Core VM Metric Database
 influxdb_bosh_db_name: "bosh_metric_db" # Bosh VM Metric Database
@@ -26,7 +26,7 @@ influxdb_container_db_name: "container_metric_db" # PaaS-TA APP Metric Database
 influxdb_logging_db_name: "logging_db"  # PaaS-TA Core VM Log Database 
 utc_time_gap: "9"			# UTC Time Zone과 Client Time Zone과의 시간 차이
 public_network_name: "vip"		# Monitoring-WEB Public Network Name
-system_type: "PaaS,CaaS,SaaS,IaaS"		# 모니터링할 환경 선택
+system_type: "PaaS,CaaS,SaaS,IaaS"	# 모니터링할 환경 선택
 prometheus_ip: "10.13.10.71"		# Kubernates의 prometheus-prometheus-prometheus-oper-prometheus-0 Pod의 Node IP
 kubernetes_ip: "10.13.10.72"		# Kubernates의 서비스 API IP
 pinpoint_was_ip: "10.13.10.73"		# Pinpoint HAProxy WEBUI Private IP
