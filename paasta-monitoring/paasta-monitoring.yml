@@ -83,10 +83,10 @@ instance_groups:
             ips: 127.0.0.1
             https_enabled: ((influxdb_https_enabled))
             pem_key: ((influxdb_ssl.certificate))((influxdb_ssl.private_key))
-            cf_db_name: ((influxdb_cf_db_name))
-            bosh_db_name: ((influxdb_bosh_db_name))
-            container_db_name: ((influxdb_container_db_name))
-            logging_db_name: ((influxdb_logging_db_name))
+            cf_db_name: ((db_cf_db_name))
+            bosh_db_name: ((bosh_db_name))
+            container_db_name: ((container_db_name))
+            logging_db_name: ((logging_db_name))
       - name: chronograf
         release: monitoring-influxdb-release
         properties:

@@ -20,10 +20,9 @@ influxdb_username: "admin"	        # Influxdb Admin 계정 Username
 influxdb_password: "PaaS-TA2020"	# Influxdb Admin 계정 Password
 influxdb_interval: "7d"                 # Influxdb Retention Policy (bootstrapper)
 influxdb_https_enabled: "true"		# Influxdb HTTPS 설정
-influxdb_cf_db_name: "cf_metric_db"     # PaaS-TA Core VM Metric Database
-influxdb_bosh_db_name: "bosh_metric_db" # Bosh VM Metric Database
-influxdb_container_db_name: "container_metric_db" # PaaS-TA APP Metric Database
-influxdb_logging_db_name: "logging_db"  # PaaS-TA Core VM Log Database 
+cf_db_name: "cf_metric_db"              # PaaS-TA Core VM Metric Database (InfluxDB)
+bosh_db_name: "bosh_metric_db"          # Bosh VM Metric Database (InfluxDB)
+container_db_name: "container_metric_db" # PaaS-TA APP Metric Database (InfluxDB)
 utc_time_gap: "9"			# UTC Time Zone과 Client Time Zone과의 시간 차이
 public_network_name: "vip"		# Monitoring-WEB Public Network Name
 system_type: "PaaS,CaaS,SaaS,IaaS"	# 모니터링할 환경 선택
