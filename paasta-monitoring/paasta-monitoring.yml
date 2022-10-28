@@ -27,9 +27,8 @@ releases:
     url: https://nextcloud.paas-ta.org/index.php/s/ER95NmGKtdEkgis/download
   - name: monitoring-influxdb-release
     version: 5.8.1
-    sha1: acba6a3e4d1355b9d0ee9740977c8989479a672a
-    url: https://nextcloud.paas-ta.org/index.php/s/xNgXEKbGEbMJby7/download
-
+    sha1: bf063f7c014a86bd7bc65344529fcc1ea9666eda
+    url: https://nextcloud.paas-ta.org/index.php/s/E49oHmGpygK97J9/download
 
 instance_groups:
   - name: redis
