@@ -20,6 +20,8 @@ influxdb_username: "admin"	        # Influxdb Admin 계정 Username
 influxdb_password: "PaaS-TA2020"	# Influxdb Admin 계정 Password
 influxdb_interval: "7d"                 # Influxdb Retention Policy (bootstrapper)
 influxdb_https_enabled: "true"		# Influxdb HTTPS 설정
+influxdb_http_bind_address: "8086"      # Influxdb Port 
+influxdb_backup_bind_address: "8088"    # Influxdb Backup Port 
 cf_db_name: "cf_metric_db"              # PaaS-TA Core VM Metric Database (InfluxDB)
 bosh_db_name: "bosh_metric_db"          # Bosh VM Metric Database (InfluxDB)
 container_db_name: "container_metric_db" # PaaS-TA APP Metric Database (InfluxDB)

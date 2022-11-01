@@ -27,8 +27,8 @@ releases:
     url: https://nextcloud.paas-ta.org/index.php/s/ER95NmGKtdEkgis/download
   - name: monitoring-influxdb-release
     version: 5.8.1
-    sha1: bf063f7c014a86bd7bc65344529fcc1ea9666eda
-    url: https://nextcloud.paas-ta.org/index.php/s/E49oHmGpygK97J9/download
+    sha1: 813d7b2ebf18c0859df209853818c53a22f42b2f
+    url: https://nextcloud.paas-ta.org/index.php/s/qSsJerfdNKXxC5o/download
 
 instance_groups:
   - name: redis
@@ -80,6 +80,10 @@ instance_groups:
             replication: 1
             ips: 127.0.0.1
             https_enabled: ((influxdb_https_enabled))
+            http: 
+              bind-address: ((influxdb_http_bind_address))
+            backup:
+              bind-address: ((influxdb_backup_bind_address))
             pem_key: ((influxdb_ssl.certificate))((influxdb_ssl.private_key))
             cf_db_name: ((cf_db_name))
             bosh_db_name: ((bosh_db_name))
@@ -87,10 +91,13 @@ instance_groups:
             logging_db_name: ((logging_db_name))
       - name: chronograf
         release: monitoring-influxdb-release
-        properties:
-          chronograf:
-            https_enabled: ((influxdb_https_enabled))
+        properties: 
+          influxdb:
+            user: ((influxdb_username))
             password: ((influxdb_password))
+            https_enabled: ((influxdb_https_enabled))
+            http:
+              bind-address: ((influxdb_http_bind_address))
 
   - name: mariadb
     azs: ((mariadb_azs))
