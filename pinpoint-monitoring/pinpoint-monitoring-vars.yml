@@ -1,6 +1,6 @@
 ### Main Stemcells Setting ###
 stemcell_os: "ubuntu-bionic"                            # Deployment Main Stemcell OS
-stemcell_version: "1.107"                                # Main Stemcell Version
+stemcell_version: "1.122"                                # Main Stemcell Version
 stemcell_alias: "default"                               # Main Stemcell Alias
 
 ### Enable private network for HAProxy
