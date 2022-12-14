@@ -16,7 +16,7 @@ releases:
   - name: monitoring-dashboard-release
     version: 5.8.2
     sha1: ba29cbe68bd2417ff6a910d7c079d1c377339b9e
-    url: https://nextcloud.paas-ta.org/index.php/s/M4m4wXaxHqESoKC/download
+    url: https://nextcloud.paas-ta.org/index.php/s/SdmjkomE9pAY8a7/download
   - name: bpm
     version: 1.1.15
     sha1: 0d48aa01a65b947b97570234eb2401e821a8bd35
