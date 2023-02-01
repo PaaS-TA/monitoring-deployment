@@ -14,17 +14,17 @@ stemcells:
 
 releases:
   - name: monitoring-dashboard-release
-    version: 5.8.2
-    sha1: ba29cbe68bd2417ff6a910d7c079d1c377339b9e
-    url: https://nextcloud.paas-ta.org/index.php/s/SdmjkomE9pAY8a7/download
+    version: 5.8.5
+    sha1: e5b7e694d9cc68d7d70d992e117924aba5c51875
+    url: https://nextcloud.paas-ta.org/index.php/s/JyyPQ4YRxMRCJRd/download
   - name: bpm
     version: 1.1.15
     sha1: 0d48aa01a65b947b97570234eb2401e821a8bd35
     url: https://bosh.io/d/github.com/cloudfoundry/bpm-release?v=1.1.15
   - name: monitoring-redis-release
-    version: 5.8.1
-    sha1: 2e49c4ba9bd1885c863e98f2b88aa721f3090be8
-    url: https://nextcloud.paas-ta.org/index.php/s/ER95NmGKtdEkgis/download
+    version: 5.8.5
+    sha1: 6c0c434b464166841e9bf90545aeff1bfd4ff8d5
+    url: https://nextcloud.paas-ta.org/index.php/s/dWRgyMZEJpFgaTL/download
   - name: monitoring-influxdb-release
     version: 5.8.1
     sha1: 813d7b2ebf18c0859df209853818c53a22f42b2f
